@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.3.1] - 2026-03-30
+
+### Fixed
+- Accordion scroll-to behavior on Careers page (expertise + FAQ) and index Services section. The 100ms setTimeout fired before the 500ms expand/collapse animations completed, causing Lenis to calculate scroll targets from intermediate layout positions. Increased timeout to 500ms so layout settles before scrolling.
+
 ## [1.3.0] - 2026-03-30
 
 ### Added

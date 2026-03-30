@@ -85,7 +85,7 @@ export default function CareersPage() {
         if (el && lenis) {
           lenis.scrollTo(el, { offset: -100, duration: 1 });
         }
-      }, 100);
+      }, 500);
     }
   }, [openExpertise]);
 
@@ -99,7 +99,7 @@ export default function CareersPage() {
         if (el && lenis) {
           lenis.scrollTo(el, { offset: -100, duration: 1 });
         }
-      }, 100);
+      }, 500);
     }
   }, [openFaq]);
 
