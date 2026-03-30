@@ -7,7 +7,7 @@ const services = [
   {
     num: "01",
     title: "AI-POWERED GROWTH",
-    desc: "MAGZ Marketing leverages AI-powered analytics and advanced data modeling to intelligently connect athletes, collectives, and agencies with the most aligned brand partners—driving stronger fit, faster activation, and measurable performance. Our approach prioritizes measurable outcomes, deploying precision-targeted campaigns and custom-built activations that elevate both athlete and brand value.",
+    desc: "MAGZ Marketing leverages AI-powered analytics and advanced data modeling to intelligently connect athletes, collectives, and agencies with the most aligned brand partners—driving stronger fit, faster activation, and measurable performance. Our approach prioritizes measurable outcomes, deploying precision-targeted campaigns and custom-built activations that elevate both athlete and brand value. Built to support talent and agencies at every stage—from emerging athletes and transfer portal entrants to established professionals.",
     bullets: [
       "AI-Driven Strategy: Utilizes machine learning and advanced analytics to identify optimal athlete–brand alignments based on performance, audience overlap, and brand fit.",
       "Intelligent Targeting: Analyzes engagement trends, fan demographics, content performance, and brand affinity to create precision-matched partnerships.",

@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.3.0] - 2026-03-30
+
+### Added
+- "Empowering Athletes" section on home page (between Join the Team and Footer) with company mission copy from original MAGZ site
+- Social media icons in Empowering Athletes section using SVG assets from S3 (`social_icons/`)
+- Physical address ("5 Cowboys Way Ste 300, Frisco, TX") in Footer
+- Linktree (`linktr.ee/magzsports`) to Footer social links
+- Missing sentence to AI-Powered Growth service description: "Built to support talent and agencies at every stage—from emerging athletes and transfer portal entrants to established professionals."
+
+### Changed
+- Statistics restored to original values: 300+ Athletes, 80+ Brands, 45+ Universities, 3B+ Social Impressions, 15+ Sports Agencies
+- "FIND US" navbar button now opens Linktree (`linktr.ee/magzsports`) in new tab instead of scrolling to footer
+- Footer LinkedIn URL corrected to `linkedin.com/company/magzsports/` (was `magzmarketing`)
+- Footer Twitter/X URL updated to `x.com/magzmarketing` (was `twitter.com`)
+
+### Removed
+- TikTok social link (not present in original MAGZ site)
+
 ## [1.2.1] - 2026-03-30
 
 ### Fixed
@@ -49,7 +67,7 @@
 - Lenis smooth scroll integration
 - @chenglou/pretext text measurement for responsive heading layout (with Vite `optimizeDeps` config)
 - Wouter client-side routing (`/`, `/careers`, 404)
-- react-countup animated statistics (250+ Athletes, 50+ Brands, 75+ Universities, 500M+ Impressions, 30+ Agencies)
+- react-countup animated statistics
 - Brand partner logo grid with external image loading
 - Athlete photo gallery with S3-hosted images
 - Hero section with background video from S3

@@ -126,7 +126,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
-            onClick={() => scrollTo('footer')}
+            onClick={() => window.open('https://linktr.ee/magzsports', '_blank', 'noopener,noreferrer')}
             className="brutalist-button text-sm"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -177,7 +177,7 @@ export function Navbar() {
               transition={{ delay: 0.4, duration: 0.4 }}
             >
               <button
-                onClick={() => scrollTo('footer')}
+                onClick={() => { setIsMobileMenuOpen(false); window.open('https://linktr.ee/magzsports', '_blank', 'noopener,noreferrer'); }}
                 className="text-accent hover:text-secondary transition-colors"
               >
                 FIND US

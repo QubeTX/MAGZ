@@ -6,6 +6,7 @@ import { Stats } from "@/components/Stats";
 import { Brands } from "@/components/Brands";
 import { Gallery } from "@/components/Gallery";
 import { Careers } from "@/components/Careers";
+import { EmpoweringAthletes } from "@/components/EmpoweringAthletes";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <Brands />
       <Gallery />
       <Careers />
+      <EmpoweringAthletes />
       <Footer />
     </main>
   );

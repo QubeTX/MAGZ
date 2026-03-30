@@ -3,11 +3,11 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { value: 250, suffix: "+", label: "Athletes", color: "text-accent" },
-  { value: 50, suffix: "+", label: "Brands", color: "text-secondary" },
-  { value: 75, suffix: "+", label: "Universities", color: "text-accent" },
-  { value: 500, suffix: "M+", label: "Social Impressions", color: "text-secondary" },
-  { value: 30, suffix: "+", label: "Sports Agencies", color: "text-accent" },
+  { value: 300, suffix: "+", label: "Athletes", color: "text-accent" },
+  { value: 80, suffix: "+", label: "Brands", color: "text-secondary" },
+  { value: 45, suffix: "+", label: "Universities", color: "text-accent" },
+  { value: 3, suffix: "B+", label: "Social Impressions", color: "text-secondary" },
+  { value: 15, suffix: "+", label: "Sports Agencies", color: "text-accent" },
 ];
 
 export function Stats() {

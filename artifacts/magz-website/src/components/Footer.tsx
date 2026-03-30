@@ -84,10 +84,10 @@ export function Footer() {
           >
             <h3 className="font-mono font-bold tracking-widest text-sm border-b-2 border-background/20 pb-2 mb-2 uppercase">Socials</h3>
             {[
+              { name: 'Linktree', url: 'https://linktr.ee/magzsports' },
               { name: 'Instagram', url: 'https://www.instagram.com/magzmarketing/' },
-              { name: 'Twitter', url: 'https://twitter.com/magzmarketing' },
-              { name: 'LinkedIn', url: 'https://www.linkedin.com/company/magzmarketing/' },
-              { name: 'TikTok', url: 'https://www.tiktok.com/@magzmarketing' },
+              { name: 'X', url: 'https://x.com/magzmarketing' },
+              { name: 'LinkedIn', url: 'https://www.linkedin.com/company/magzsports/' },
             ].map((link, i) => (
               <motion.a
                 key={link.name}
@@ -108,7 +108,19 @@ export function Footer() {
         </div>
 
         <motion.div
-          className="mt-8 flex flex-col md:flex-row justify-between items-center gap-4 font-mono text-sm font-bold tracking-widest"
+          className="mt-8 mb-4 text-center"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+        >
+          <p className="font-mono text-xs tracking-widest text-background/50 uppercase">
+            5 Cowboys Way Ste 300, Frisco, TX
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="mt-4 flex flex-col md:flex-row justify-between items-center gap-4 font-mono text-sm font-bold tracking-widest"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
