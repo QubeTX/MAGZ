@@ -5,7 +5,7 @@ export function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer id="footer" className="bg-foreground text-background pt-24 pb-8 px-6 md:px-12 border-t-4 border-accent mt-12 relative overflow-hidden">
+    <footer id="footer" className="bg-foreground text-background pt-24 pb-8 px-6 md:px-12 border-t-4 border-accent relative overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none overflow-hidden">
         <span className="font-display text-[30vw] whitespace-nowrap leading-none select-none">MAGZ</span>
       </div>

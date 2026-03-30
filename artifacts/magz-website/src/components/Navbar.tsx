@@ -2,10 +2,14 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLocation } from "wouter";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location, setLocation] = useLocation();
+
+  const isHome = location === "/" || location === "";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -15,14 +19,40 @@ export function Navbar() {
 
   const scrollTo = (id: string) => {
     setIsMobileMenuOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    if (isHome) {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      setLocation("/");
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    }
+  };
+
+  const goHome = () => {
+    setIsMobileMenuOpen(false);
+    if (isHome) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      setLocation("/");
+    }
   };
 
   const navLinks = [
     { name: "ABOUT", id: "about" },
     { name: "BRANDS", id: "brands" },
-    { name: "CAREERS", id: "careers" },
+    { name: "CAREERS", href: "/careers" },
   ];
+
+  const handleNavClick = (link: { name: string; id?: string; href?: string }) => {
+    setIsMobileMenuOpen(false);
+    if (link.href) {
+      setLocation(link.href);
+      window.scrollTo({ top: 0 });
+    } else if (link.id) {
+      scrollTo(link.id);
+    }
+  };
 
   return (
     <motion.nav
@@ -39,7 +69,7 @@ export function Navbar() {
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex justify-between items-center">
         <motion.div
           className="cursor-pointer z-50 flex items-center gap-4"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={goHome}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -60,8 +90,11 @@ export function Navbar() {
                 transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
               >
                 <button
-                  onClick={() => scrollTo(link.id)}
-                  className="relative group hover:text-accent transition-colors py-2"
+                  onClick={() => handleNavClick(link)}
+                  className={cn(
+                    "relative group py-2 transition-colors",
+                    link.href && location === link.href ? "text-accent" : "hover:text-accent"
+                  )}
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-[3px] bg-gradient-to-r from-accent to-secondary transition-all duration-300 group-hover:w-full"></span>
@@ -109,7 +142,7 @@ export function Navbar() {
                   transition={{ delay: 0.1 + i * 0.1, duration: 0.4 }}
                 >
                   <button
-                    onClick={() => scrollTo(link.id)}
+                    onClick={() => handleNavClick(link)}
                     className="hover:text-accent transition-colors"
                   >
                     {link.name}

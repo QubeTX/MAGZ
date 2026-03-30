@@ -52,14 +52,18 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 
 ### `artifacts/magz-website` (`@workspace/magz-website`)
 
-Brutalist redesign of MAGZ Marketing website. Single-page React + Vite frontend with no backend dependency.
+Brutalist redesign of MAGZ Marketing website. Multi-page React + Vite frontend with no backend dependency.
 
-- **Stack**: React, Vite, Tailwind CSS, Framer Motion, react-countup, lucide-react
-- **Design**: Brutalist aesthetic — black (#050505) background, white (#F5F5F5) text, electric yellow (#CCFF00) accent, no rounded corners, thick borders, extreme typography scale
+- **Stack**: React, Vite, Tailwind CSS, Framer Motion, react-countup, lucide-react, wouter, @chenglou/pretext
+- **Design**: Brutalist aesthetic — black (#0A0A0A) background, white (#F5F5F5) text, orange (#F7941D) primary accent, blue (#2D6BC6) secondary accent, no rounded corners, thick borders, extreme typography scale
 - **Fonts**: Anton (display headings), Space Mono (monospace labels/numbers), Inter (body text)
-- **Sections**: Hero, scrolling marquee, expandable services (accordion), animated stats counter, brand logos grid, athlete photo gallery, footer with CTA
+- **Pages**:
+  - `/` — Home: Hero, scrolling marquee, expandable services (accordion), animated stats counter, brand logos grid, athlete photo gallery, careers teaser, footer with CTA
+  - `/careers` — Full careers page: intro, three info columns (Our Team, Work With The Best, A Day At MAGZ), partnership expertise accordion (3 sections), FAQs (4 items), LinkedIn CTA, footer
+- **Routing**: wouter with `base` set to `import.meta.env.BASE_URL`
 - **Preview**: Served at `/` (root path)
 - All images loaded from external URLs (magzmarketing.com, magz.s3.us-east-1.amazonaws.com)
+- Brand logos: most use brightness(0) invert(1) filter for white appearance; BWW, Panini, Canes show full color (detailed artwork)
 
 ### `artifacts/api-server` (`@workspace/api-server`)
 

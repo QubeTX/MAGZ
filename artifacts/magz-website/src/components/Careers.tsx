@@ -1,14 +1,10 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-
-const jobs = [
-  { role: "Growth Strategist", type: "FULL-TIME // DALLAS, TX" },
-  { role: "Content & Social Lead", type: "FULL-TIME // REMOTE" },
-  { role: "Data Analyst", type: "FULL-TIME // DALLAS, TX" },
-  { role: "Partnership Coordinator", type: "FULL-TIME // REMOTE" },
-];
+import { useLocation } from "wouter";
 
 export function Careers() {
+  const [, setLocation] = useLocation();
+
   return (
     <section id="careers" className="py-24 md:py-32 border-t-4 border-secondary/30">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
@@ -30,9 +26,20 @@ export function Careers() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
             />
-            <p className="font-sans text-lg md:text-xl leading-relaxed text-foreground/80 max-w-xl">
+            <p className="font-sans text-lg md:text-xl leading-relaxed text-foreground/80 max-w-xl mb-8">
               We're building the future of sports marketing at the intersection of AI, athlete influence, and social distribution. If you're driven, creative, and ready to move fast — we want to hear from you.
             </p>
+            <motion.button
+              onClick={() => {
+                setLocation("/careers");
+                window.scrollTo({ top: 0 });
+              }}
+              className="brutalist-button text-base flex items-center gap-3"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              EXPLORE CAREERS <ArrowUpRight size={20} />
+            </motion.button>
           </motion.div>
 
           <motion.div
@@ -42,15 +49,23 @@ export function Careers() {
             transition={{ duration: 0.7, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
             className="flex flex-col gap-6"
           >
-            {jobs.map((job, i) => (
-              <motion.a
+            {[
+              { role: "Growth Strategist", type: "FULL-TIME // DALLAS, TX" },
+              { role: "Content & Social Lead", type: "FULL-TIME // REMOTE" },
+              { role: "Data Analyst", type: "FULL-TIME // DALLAS, TX" },
+              { role: "Partnership Coordinator", type: "FULL-TIME // REMOTE" },
+            ].map((job, i) => (
+              <motion.button
                 key={i}
-                href="mailto:careers@magzmarketing.com"
+                onClick={() => {
+                  setLocation("/careers");
+                  window.scrollTo({ top: 0 });
+                }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
-                className="group flex items-center justify-between border-4 border-foreground/20 p-6 hover:bg-accent hover:border-accent hover:text-black transition-all duration-300"
+                className="group flex items-center justify-between border-4 border-foreground/20 p-6 hover:bg-accent hover:border-accent hover:text-black transition-all duration-300 text-left"
                 whileHover={{ x: 8, borderColor: "#F7941D" }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -64,7 +79,7 @@ export function Careers() {
                 >
                   <ArrowUpRight className="w-8 h-8" />
                 </motion.div>
-              </motion.a>
+              </motion.button>
             ))}
           </motion.div>
         </div>
