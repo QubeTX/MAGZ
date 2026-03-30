@@ -1,0 +1,1628 @@
+╭─── Claude Code v2.1.87 ──────────────────────────────────────────────────────╮
+│                                                    │ Tips for getting        │
+│                Welcome back Emmett!                │ started                 │
+│                                                    │ √ Run /init to create … │
+│                       ▐▛███▜▌                      │ ─────────────────────── │
+│                      ▝▜█████▛▘                     │ Recent activity         │
+│                        ▘▘ ▝▝                       │ No recent activity      │
+│        Opus 4.6 (1M context) · Claude Max ·        │                         │
+│        hey@emmetts.dev's Organization              │                         │
+│             ~\Documents\GitHub\MAGZ-26             │                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+> /clear                                                                        
+  ⎿  (no content)
+
+> Create a new fully on-brand 404 page.                                         
+
+● Let me explore the current 404 page and the design system to plan a proper
+  on-brand replacement.
+
+● 2 Explore agents finished (ctrl+o to expand)
+   ├─ Explore current 404 page and routing · 7 tool uses · 123.7k tokens
+   │  ⎿  Done
+   └─ Explore MAGZ design system and styling · 20 tool uses · 143.7k tokens
+      ⎿  Done
+
+> Hey, while you're ahead, do a comprehensive analysis of the entire codebase  
+and create a design.md file.                                                   
+
+● Got it — I'll plan both the 404 page and the design.md file. Let me launch a
+  Plan agent for the 404 page design and do a deeper codebase sweep for the
+  design document.
+
+● 2 background agents launched (↓ to manage)
+   ├─ Plan (Plan on-brand 404 page design)
+   └─ Explore (Deep codebase analysis for design.md)
+
+> That design.md file should just have an entire comprehensive detail of the UI 
+ design, UX design, brand styles, and things like that. When we add more pages  
+and things, it'll be consistent with the rest of the site. Same with frameworks 
+ like Pretext and all that stuff.                                               
+
+> And Framer Motion and Animations and Interactivity and... 
+
+● Got it — the design.md will be a comprehensive design system reference
+  covering UI, UX, brand, animations, interactivity, Pretext, Framer Motion
+  patterns, Lenis, and everything needed to keep future pages consistent.
+  Waiting on both agents to finish their analysis before writing the plan.
+
+✻ Cogitated for 1m 56s
+
+● Agent "Plan on-brand 404 page design" completed
+
+● The 404 page plan is ready. Still waiting on the deep codebase analysis agent
+  to finish for the design.md portion. Let me check its progress.
+
+  Read 1 file (ctrl+o to expand)
+
+● The analysis agent is still working. Let me start reading some critical files
+  myself to verify details for the plan while we wait.
+
+  Read 16 files (ctrl+o to expand)
+
+> Make sure the plan includes using comprehensive tasks and duties across the  
+entire change, whatever we're doing.                                           
+
+> Tasks and To-Do's 
+
+● Now let me check for remaining files I need for the design.md.
+
+  Searched for 1 pattern, read 1 file (ctrl+o to expand)
+
+● I now have complete knowledge of every file in the codebase. Let me write the
+  comprehensive plan with detailed tasks.
+
+● Let me create the task list and write the plan.
+● Now let me write the plan file.
+
+● Updated plan
+  ⎿  /plan to preview
+
+● Plan is written with 6 tracked tasks and full implementation details. Task 1
+  (design.md) runs independently; Tasks 2-4 build the 404 page sequentially;
+  Tasks 5-6 verify everything.
+
+● User approved Claude's plan
+  ⎿  Plan saved to: ~\.claude\plans\purring-jumping-rose.md · /plan to edit
+     Plan: On-Brand 404 Page + Comprehensive Design System Reference
+
+     Context
+
+     The MAGZ website (React 19 + Vite 7 + Tailwind CSS 4, brutalist sports
+     marketing aesthetic) has a minimal placeholder 404 page — just a centered
+     box with "404" and "Page Not Found". Every other page in the site (Home,
+     CareersPage) has rich Framer Motion animations, Navbar/Footer, and full
+     branded design language. The 404 page needs to match.
+
+     Additionally, the project lacks a centralized design system reference. As
+     new pages get added, there's no single document to ensure consistency. A
+     DESIGN.md file will serve as the canonical reference for brand identity,
+     animation patterns, typography, layout conventions, and component
+     architecture.
+
+     ---
+     Task 1: Create artifacts/magz-website/DESIGN.md
+
+     File: artifacts/magz-website/DESIGN.md (new file)
+
+     A comprehensive design system document covering every aspect of the site's
+     visual and interactive identity. Sections:
+
+     1.1 Brand Identity
+
+     - Company: MAGZ Marketing — sports marketing at intersection of AI, athlete
+      influence, social distribution
+     - Founded 2021, Dallas TX (5 Cowboys Way Ste 300, Frisco, TX)
+     - Aesthetic: Brutalist — zero border-radius (globally forced), heavy
+     borders, uppercase typography, high contrast, sharp geometric elements
+
+     1.2 Color System
+
+     ┌─────────────────────────┬─────────┬──────────────────────────────────────
+     ┐
+     │          Token          │  Value  │                Usage
+     │
+     ├─────────────────────────┼─────────┼──────────────────────────────────────
+     ┤
+     │ --color-background      │ #0A0A0A │ Page backgrounds, dark sections
+     │
+     ├─────────────────────────┼─────────┼──────────────────────────────────────
+     ┤
+     │ --color-foreground      │ #F5F5F5 │ Primary text, inverted section
+     │
+     │                         │         │ backgrounds
+     │
+     ├─────────────────────────┼─────────┼──────────────────────────────────────
+     ┤
+     │ --color-accent          │ #F7941D │ Primary accent (orange), CTAs,
+     │
+     │                         │         │ highlights
+     │
+     ├─────────────────────────┼─────────┼──────────────────────────────────────
+     ┤
+     │ --color-accent-hover    │ #E5850A │ Darker orange for hover
+     │
+     ├─────────────────────────┼─────────┼──────────────────────────────────────
+     ┤
+     │ --color-secondary       │ #2D6BC6 │ Secondary accent (blue), alternating
+     │
+     │                         │         │  highlights
+     │
+     ├─────────────────────────┼─────────┼──────────────────────────────────────
+     ┤
+     │ --color-secondary-hover │ #1E5AB0 │ Darker blue for hover
+     │
+     ├─────────────────────────┼─────────┼──────────────────────────────────────
+     ┤
+     │ --color-border          │ #2A2A2A │ Default border color
+     │
+     └─────────────────────────┴─────────┴──────────────────────────────────────
+     ┘
+
+     - Selection color: selection:bg-accent selection:text-black
+     - Scrollbar: accent thumb, secondary on hover, background track
+     - Inverted sections (Stats, EmpoweringAthletes, Footer): swap
+     bg-foreground/text-background
+
+     1.3 Typography
+
+     Fonts:
+     - Guton (display + body, font-sans and font-display): self-hosted
+     WOFF2/WOFF at /fonts/Guton/, weights 400-900
+     - Space Mono (monospace, font-mono): Google Fonts import, weights 400/700 +
+      italics
+
+     Heading rules: All h1-h6 get font-display font-extrabold tracking-wide 
+     uppercase
+
+     Type scale patterns used across components:
+     - Hero "MAGZ": text-[22vw] md:text-[20vw] font-black leading-[0.8]
+     - Page titles: text-7xl md:text-[10rem] (CareersPage), text-6xl md:text-8xl
+      (section headings)
+     - Section headings: text-5xl md:text-7xl
+     - Card titles: text-3xl md:text-5xl (Services), text-4xl md:text-5xl
+     (CareersPage)
+     - Subtitles: text-xl md:text-2xl font-mono (Hero "WE ARE"), text-lg 
+     md:text-2xl font-sans (body)
+     - Nav links: text-sm font-mono font-bold tracking-widest uppercase
+     - Labels/metadata: text-xs font-mono tracking-widest or tracking-[0.3em]
+     - Stat numbers: text-7xl md:text-8xl lg:text-[7rem] font-display
+     font-extrabold
+     - Mobile menu: text-5xl font-display
+
+     1.4 Spacing & Layout
+
+     - Max container: max-w-[1600px] mx-auto (Brands grid allows max-w-[1920px])
+     - Horizontal padding: px-6 md:px-12
+     - Section vertical padding: py-24 md:py-32
+     - Navbar top padding on pages: pt-20 (Hero), pt-32 (CareersPage hero)
+     - Grid gaps: gap-[2px] (Gallery tight grid), gap-6 (accordion items),
+     gap-12 lg:gap-8 (section grids), gap-12 lg:gap-24 (Careers 2-col)
+
+     1.5 Border & Shadow Patterns
+
+     - Global: border-radius: 0 !important on all elements
+     - Section borders: border-y-4 border-accent (Stats, marquee), border-t-4 
+     border-accent (Footer, EmpoweringAthletes), border-t-4 border-secondary/30
+     (Careers, FAQ)
+     - Card borders: border-4 (Services, expertise) — border-foreground/20
+     default, border-accent active
+     - FAQ borders: border-2 (thinner) — border-foreground/15 default,
+     border-secondary active
+     - Active card shadow: shadow-[0_0_30px_rgba(247,148,29,0.1)]
+     - Button shadow: shadow-[4px_4px_0px_0px_#F7941D] →
+     shadow-[0px_0px_0px_0px_#F7941D] on hover
+
+     1.6 Custom CSS Utilities (defined in src/index.css)
+
+     - .brutalist-button — font-mono bold uppercase, border-2 accent, offset
+     shadow, hover fills bg-accent with -translate-y-1 translate-x-1
+     - .brutalist-border — border-2 border-foreground
+     - .text-outline / .text-outline-accent / .text-outline-secondary —
+     -webkit-text-stroke 2px with transparent fill
+     - .gradient-text — linear-gradient(135deg, accent, secondary) with
+     background-clip text
+     - .glow-accent — text-shadow: 0 0 30px rgba(247,148,29,0.3), 0 0 60px
+     rgba(247,148,29,0.1)
+     - .glow-secondary — same pattern with blue
+
+     1.7 Animation System (Framer Motion)
+
+     Standard easing: [0.76, 0, 0.24, 1] — used consistently across all
+     components
+
+     Reusable variants:
+     // Stagger container (Services, CareersPage)
+     const stagger = { hidden: {}, show: { transition: { staggerChildren:
+     0.1-0.15 } } };
+
+     // Fade up (universal entrance)
+     const fadeUp = { hidden: { opacity: 0, y: 30-40 }, show: { opacity: 1, y:
+     0, transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] } } };
+
+     // Slide up (Services variant)
+     const slideUp = { hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0,
+     transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] } } };
+
+     // Scale reveal (Brands grid)
+     const itemVariants = { hidden: { opacity: 0, scale: 0.8 }, show: { opacity:
+      1, scale: 1, transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] } } };
+
+     Entrance patterns:
+     - Navbar: initial={{ y: -100 }} animate={{ y: 0 }} duration 0.8
+     - Hero text: initial={{ y: 80, opacity: 0, scale: 0.9 }} duration 1
+     - Letter spacing reveal: initial={{ letterSpacing: "0.8em", opacity: 0 }} 
+     animate={{ letterSpacing: "0.3em", opacity: 1 }} duration 1.2
+     - Section headings: initial={{ opacity: 0, y: 30 }} whileInView={{ opacity:
+      1, y: 0 }} viewport once
+     - Side reveals: initial={{ opacity: 0, x: -50 }} or x: 50 for left/right
+     - Staggered items: delay 0.3 + i * 0.1 (nav), i * 0.08 (Gallery columns), i
+      * 0.12 (Stats)
+     - Mobile menu: clipPath circle animation from circle(0% at calc(100% - 
+     40px) 40px) to circle(150%...)
+
+     Scroll-based:
+     - Parallax: useScroll + useTransform(scrollYProgress, [0,1], ["0%","30%"])
+     for background, ["0%","50%"] for text
+     - Opacity fade: useTransform(scrollYProgress, [0, 0.8], [1, 0])
+     - Gradient line scale: initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
+     - Gradient bar width: initial={{ width: 0 }} whileInView={{ width: 96-120 
+     }}
+
+     Interactive:
+     - Hover scale: whileHover={{ scale: 1.02-1.1 }}
+     - Tap scale: whileTap={{ scale: 0.95-0.98 }}
+     - Hover translate: whileHover={{ x: 4-8 }} (menu items, cards)
+     - Spring physics: type: "spring", stiffness: 300-400 (interactive text,
+     stats)
+     - Hover color: whileHover={{ color: "#F7941D" }} (menu), color: "#2D6BC6"
+     (socials)
+
+     Accordion expand/collapse:
+     initial={{ height: 0, opacity: 0 }}
+     animate={{ height: "auto", opacity: 1 }}
+     exit={{ height: 0, opacity: 0 }}
+     transition={{ duration: 0.4-0.5, ease: [0.76, 0, 0.24, 1] }}
+
+     Infinite animations:
+     - Rotating squares: animate={{ rotate: [0, 90, 0] }} duration 4, easeInOut
+     - Counter-rotating: rotate: [0, -90, 0] with delay 0.5
+     - Pulsing square: animate={{ scale: [1, 1.3, 1] }} duration 2
+     - Scroll indicator bounce: animate={{ y: [0, 6, 0] }} duration 1.5
+     - Marquee scroll: animate={{ x: ["0%", "-50%"] }} linear, duration 15-20
+     - Icon rotation on toggle: animate={{ rotate: isOpen ? 180 : 0 }}
+
+     1.8 Smooth Scroll (Lenis)
+
+     - Initialized in App.tsx with duration: 1.2, exponential easing
+     - Exposed as window.__lenis for programmatic scrolling
+     - Components access via (window as any).__lenis
+     - lenis.scrollTo(element, { offset: -80 }) for nav links (clears navbar)
+     - lenis.scrollTo(element, { offset: -100, duration: 1 }) for accordions
+     - lenis.scrollTo(0) for scroll-to-top
+     - Accordion scroll must use setTimeout(fn, 500) to wait for expand
+     animation
+
+     1.9 Pretext Heading Measurement
+
+     - @chenglou/pretext dynamically imported for responsive text measurement
+     - Used in PretextHeading.tsx (Hero "MAGZ") and Hero subtitle line-break
+     decision
+     - Pattern: pretext.prepare(text, fontString) → pretext.layout(prepared, 
+     containerWidth, lineHeight) → use result.height to determine layout
+     - Requires optimizeDeps.include in Vite config and
+     allowImportingTsExtensions: true in tsconfig
+
+     1.10 Accordion Pattern
+
+     Reused in Services, CareersPage expertise, CareersPage FAQ:
+     - useState<number | null> for openIndex (initial 0 for Services/expertise,
+     null for FAQ)
+     - useRef<(HTMLDivElement | null)[]>([]) for item refs
+     - useCallback toggle handler with Lenis scroll-to after 500ms setTimeout
+     - AnimatePresence wrapping expanded content
+     - Plus/Minus icons from lucide-react in bordered square container
+     - Active state: accent border + bg-accent/5 + glow shadow
+     - Bullet list items with ■ prefix, staggered entrance
+
+     1.11 Background Patterns
+
+     - Noise texture: SVG data URI with feTurbulence (fractalNoise, baseFreq
+     0.65, 3 octaves), opacity 0.08, mix-blend-overlay
+     - Grid pattern:
+     bg-[linear-gradient(to_right,rgba(247,148,29,0.05)_1px,transparent_1px),lin
+     ear-gradient(to_bottom,rgba(45,107,198,0.05)_1px,transparent_1px)] 
+     bg-[size:4rem_4rem]
+     - Gradient overlays: bg-gradient-to-b from-background/70 via-background/50 
+     to-background + bg-gradient-to-r from-accent/10 via-transparent 
+     to-secondary/10
+     - Watermark text: Giant text-[30vw] "MAGZ" at opacity 3% (Footer)
+
+     1.12 Component Inventory
+
+     Component: Navbar
+     File: src/components/Navbar.tsx
+     Purpose: Fixed nav with scroll state, mobile circular clip-path menu,
+     Wouter
+       navigation
+     ────────────────────────────────────────
+     Component: Hero
+     File: src/components/Hero.tsx
+     Purpose: Full-viewport hero with parallax video, Pretext heading, animated
+       subtitle
+     ────────────────────────────────────────
+     Component: Marquee
+     File: src/components/Marquee.tsx
+     Purpose: Infinite horizontal text scroll on orange gradient background
+     ────────────────────────────────────────
+     Component: Services
+     File: src/components/Services.tsx
+     Purpose: 3-item accordion with numbered cards, expand/collapse, bullet
+     lists
+     ────────────────────────────────────────
+     Component: Stats
+     File: src/components/Stats.tsx
+     Purpose: 5-column counter grid with react-countup, inverted colors
+     ────────────────────────────────────────
+     Component: Brands
+     File: src/components/Brands.tsx
+     Purpose: 4-column logo grid with hover effects, invert filters
+     ────────────────────────────────────────
+     Component: Gallery
+     File: src/components/Gallery.tsx
+     Purpose: 4-column image grid, grayscale-to-color hover, gradient underlines
+     ────────────────────────────────────────
+     Component: Careers
+     File: src/components/Careers.tsx
+     Purpose: 2-column CTA + image section linking to /careers
+     ────────────────────────────────────────
+     Component: EmpoweringAthletes
+     File: src/components/EmpoweringAthletes.tsx
+     Purpose: 2-column copy section, social icons, inverted colors
+     ────────────────────────────────────────
+     Component: Footer
+     File: src/components/Footer.tsx
+     Purpose: 3-column footer, inverted colors, menu/social links, back-to-top
+     ────────────────────────────────────────
+     Component: PretextHeading
+     File: src/components/PretextHeading.tsx
+     Purpose: Dynamic text measurement wrapper using @chenglou/pretext
+     ────────────────────────────────────────
+     Component: ScrollToTop
+     File: src/App.tsx
+     Purpose: Scrolls to top on route change
+
+     1.13 Page Compositions
+
+     Home (/): Navbar → Hero → Marquee → Services → Stats → Brands → Gallery →
+     Careers → EmpoweringAthletes → Footer
+
+     CareersPage (/careers): Navbar → Hero (office bg image) → Team cards (3-col
+      divide) → Expertise accordion → FAQ accordion → LinkedIn CTA → Footer
+
+     404 page (catch-all): See Task 2-4
+
+     1.14 Section IDs for Anchor Navigation
+
+     Home: hero, about (Services), stats, brands, athletes (Gallery), careers,
+     footer
+     CareersPage: careers-hero, team, expertise, faq, cta
+
+     1.15 External Assets
+
+     - S3 bucket: magz.s3.us-east-1.amazonaws.com
+     - Logo: MAGZ+Logos/Colorful+M.png
+     - Video: assets/magz_VIDEO_optimized.webm
+     - Gallery images: assets/gross_assets/webp/*.webp and assets/*.jpeg
+     - Social icons: social_icons/*.svg (LinkedIn, X, Instagram, Linktree)
+     - CareersPage images: assets/office.webp,
+     assets/Deck+Albert's+Media/ALL+AMERICAN+BOWL-23.webp,
+     assets/gross_assets/webp/FullSizeRender.webp
+     - Brand logos: bundled locally at public/brandLogos/ (15 files,
+     PNG/SVG/WebP)
+
+     1.16 Utility: cn() (clsx + tailwind-merge)
+
+     import { cn } from "@/lib/utils" — use for conditional className merging.
+
+     1.17 Icon Usage
+
+     Primary library: lucide-react — icons used: Menu, X, Plus, Minus,
+     ArrowUpRight
+     Secondary: react-icons — available but not currently in use.
+
+     1.18 Responsive Breakpoints
+
+     - Mobile-first approach
+     - md: (768px) — primary breakpoint for layout shifts (grid cols, font
+     sizes, padding)
+     - lg: (1024px) — secondary for wider layouts (grid-cols-5 Stats,
+     grid-cols-12 Services)
+     - Viewport-relative sizing for hero text: text-[22vw] md:text-[20vw]
+
+     ---
+     Task 2: Build 404 Page Hero Section
+
+     File to modify: artifacts/magz-website/src/pages/not-found.tsx
+
+     Replace the entire file. New structure:
+
+     import { motion } from "framer-motion";
+     import { useLocation } from "wouter";
+     import { ArrowLeft } from "lucide-react";
+     import { Navbar } from "@/components/Navbar";
+     import { Footer } from "@/components/Footer";
+
+     Outer wrapper: <main className="bg-background text-foreground 
+     min-h-screen"> with <Navbar /> at top, <Footer /> at bottom.
+
+     Hero section: <section className="relative min-h-screen flex flex-col 
+     justify-center items-center overflow-hidden pt-20">
+
+     Background layers (reuse from Hero.tsx pattern):
+     - Noise texture SVG at opacity 0.08
+     - Radial gradient: from-accent/10 via-transparent to-secondary/10
+     - Grid pattern: same as Stats.tsx
+
+     Content (centered, max-w-[1600px]):
+     1. "404" — font-display font-black text-[30vw] md:text-[25vw] leading-[0.8]
+      gradient-text glow-accent
+       - Entrance: initial={{ y: 80, opacity: 0, scale: 0.9 }} animate={{ y: 0, 
+     opacity: 1, scale: 1 }} duration 1
+       - Glitch effect: periodic x/skewX shifts every ~4s: animate={{ x: [0, -3,
+      5, -2, 0], skewX: [0, -2, 1, 3, 0] }} with repeat: Infinity, repeatDelay: 
+     4, duration: 0.4
+     2. "OUT OF BOUNDS" — font-display text-4xl md:text-7xl text-outline 
+     tracking-wide uppercase
+       - Letter-spacing entrance: initial={{ letterSpacing: "0.5em", opacity: 0 
+     }} animate={{ letterSpacing: "0.1em", opacity: 1 }} delay 0.3
+     3. Body text — font-sans text-lg md:text-xl text-foreground/70 max-w-2xl 
+     text-center
+       - "The page you're looking for has left the field. It might have been
+     traded, moved, or never existed."
+       - Fade up with delay 0.6
+     4. "BACK TO HOME" button — brutalist-button class, whileHover/whileTap
+     scale, ArrowLeft icon, onClick calls setLocation("/")
+       - Fade up with delay 0.8
+     5. Decorative rotating squares (bottom-right, desktop only) — exact pattern
+      from Hero.tsx:141-143
+     6. Corner label (bottom-left, desktop only) — font-mono text-xs 
+     text-foreground/40 tracking-widest: "ERROR 404 // PAGE NOT FOUND"
+
+     ---
+     Task 3: Build 404 Marquee Error Banner
+
+     Below the hero section. Follows Marquee.tsx pattern exactly.
+
+     Container: w-full bg-gradient-to-r from-accent via-accent to-[#F5A623] 
+     border-y-4 border-foreground py-4 md:py-6 overflow-hidden
+
+     Words: ["OUT", "OF", "BOUNDS", "///", "PAGE", "NOT", "FOUND", "///", 
+     "ERROR", "404", "///"]
+
+     Animation: animate={{ x: ["0%", "-50%"] }} with repeat: Infinity, ease: 
+     "linear", duration: 15
+
+     Content doubled for seamless loop, same typography as Marquee: font-display
+      font-extrabold text-4xl md:text-7xl text-black
+
+     ---
+     Task 4: Build "Lost? Try These" Navigation Section
+
+     Below the marquee. Provides navigation options.
+
+     Layout: section py-16 md:py-24 px-6 md:px-12 → max-w-[1600px] mx-auto
+
+     Heading: "LOST?" with "TRY THESE" in text-accent on second line, text-4xl 
+     md:text-6xl
+
+     Grid: grid grid-cols-1 md:grid-cols-3 gap-[2px]
+
+     3 cards, each with:
+     - border-4 border-foreground/20 p-8 md:p-10 group cursor-pointer 
+     transition-all hover:border-accent hover:bg-accent/5
+     - Number: font-mono text-2xl text-secondary/60
+     - Title: font-display text-3xl
+     - Description: font-sans text-foreground/60
+     - Bottom gradient bar: h-1 bg-gradient-to-r from-accent to-secondary 
+     scale-x-0 group-hover:scale-x-100 transition-transform origin-left
+     - Staggered whileInView animation using fadeUp variant
+     - whileHover={{ x: 4 }} on each card
+
+     Cards:
+     1. 01 — HOME — "Back to the starting lineup" → setLocation("/")
+     2. 02 — CAREERS — "Join the team" → setLocation("/careers")
+     3. 03 — FIND US — "Connect on our socials" → opens linktr.ee/magzsports
+
+     Then <Footer /> at the bottom.
+
+     ---
+     Task 5: Verify with Playwright
+
+     Start dev server, write a .cjs test script:
+     - Navigate to http://localhost:5173/nonexistent-page
+     - Assert "404" text is visible
+     - Assert "OUT OF BOUNDS" text is visible
+     - Assert Navbar is rendered (check for MAGZ logo img)
+     - Assert Footer is rendered (check for copyright text)
+     - Click "BACK TO HOME" button → verify URL is /
+     - Take screenshots at 1280x800 and 375x812
+
+     ---
+     Task 6: Run Typecheck
+
+     cd artifacts/magz-website && pnpm run typecheck
+
+     Fix any TypeScript errors.
+
+     ---
+     Verification Plan
+
+     1. pnpm run typecheck passes with no errors
+     2. pnpm run build succeeds
+     3. Playwright tests confirm:
+       - 404 page renders at any non-existent route
+       - Navbar + Footer present and functional
+       - Animations play (visual inspection of screenshots)
+       - "BACK TO HOME" navigates correctly
+       - Navigation cards are visible and interactive
+       - Responsive layout at mobile (375px) and desktop (1280px)
+
+     Critical Files
+
+     - artifacts/magz-website/src/pages/not-found.tsx — rewrite (404 page)
+     - artifacts/magz-website/DESIGN.md — new file (design system reference)
+     - artifacts/magz-website/src/index.css — read-only reference (utilities,
+     theme)
+     - artifacts/magz-website/src/components/Hero.tsx — read-only reference
+     (animation patterns)
+     - artifacts/magz-website/src/components/Marquee.tsx — read-only reference
+     (marquee pattern)
+     - artifacts/magz-website/src/components/Navbar.tsx — imported by 404 page
+     - artifacts/magz-website/src/components/Footer.tsx — imported by 404 page
+
+     Reusable Patterns (no new code needed)
+
+     - cn() from @/lib/utils — conditional className merging
+     - brutalist-button CSS class — CTA button styling
+     - gradient-text, text-outline, glow-accent — text effects
+     - Navbar/Footer components — imported directly
+     - Standard easing [0.76, 0, 0.24, 1] — all animations
+     - Noise texture SVG data URI — background pattern
+     - Grid pattern CSS — background subtle grid
+
+● Plan approved. Let me execute Tasks 1 and 2-4 in parallel — the design.md and
+  the 404 page are independent.
+
+● Write(artifacts\magz-website\DESIGN.md)
+  ⎿  Wrote 684 lines to artifacts\magz-website\DESIGN.md
+       1 # MAGZ Design System Reference
+       2 
+       3 Canonical reference for all UI, UX, brand, animation, and intera
+         ction patterns used across the MAGZ website. Use this document t
+         o ensure visual and behavioral consistency when adding new pages
+         , sections, or components.
+       4 
+       5 ---
+       6 
+       7 ## 1. Brand Identity
+       8 
+       9 - **Company:** MAGZ Marketing — sports marketing at the intersec
+         tion of AI, athlete influence, and social distribution
+      10 - **Founded:** 2021, Dallas TX
+     … +674 lines (ctrl+o to expand)
+
+● Write(artifacts\magz-website\src\pages\not-found.tsx)
+  ⎿  Added 214 lines, removed 6 lines
+        1 -export default function NotFound() {                          
+        1 +import { motion } from "framer-motion";                       
+        2 +import { useLocation } from "wouter";                         
+        3 +import { ArrowLeft } from "lucide-react";                     
+        4 +import { Navbar } from "@/components/Navbar";                 
+        5 +import { Footer } from "@/components/Footer";                 
+        6 +                                                              
+        7 +const EASE: [number, number, number, number] = [0.76, 0, 0.24,
+          + 1];                                                          
+        8 +                                                              
+        9 +const errorWords = [                                          
+       10 +  "OUT", "OF", "BOUNDS", "///", "PAGE", "NOT", "FOUND", "///",
+          + "ERROR", "404", "///"                                        
+       11 +];                                                            
+       12 +                                                              
+       13 +const navCards = [                                            
+       14 +  { num: "01", title: "HOME", desc: "Back to the starting line
+          +up", route: "/" },                                            
+       15 +  { num: "02", title: "CAREERS", desc: "Join the team", route:
+          + "/careers" },                                                
+       16 +  { num: "03", title: "FIND US", desc: "Connect on our socials
+          +", external: "https://linktr.ee/magzsports" },                
+       17 +];                                                            
+       18 +                                                              
+       19 +const stagger = {                                             
+       20 +  hidden: {},                                                 
+       21 +  show: { transition: { staggerChildren: 0.1 } },             
+       22 +};                                                            
+       23 +                                                              
+       24 +const fadeUp = {                                              
+       25 +  hidden: { opacity: 0, y: 30 },                              
+       26 +  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease:
+          + EASE } },                                                    
+       27 +};                                                            
+       28 +                                                              
+       29 +function MarqueeContent() {                                   
+       30    return (
+        3 -    <div className="min-h-screen w-full flex items-center just
+          -ify-center bg-background text-foreground">                    
+        4 -      <div className="text-center border-4 border-foreground p
+          --12">                                                         
+        5 -        <h1 className="font-display text-8xl mb-4">404</h1>   
+        6 -        <p className="font-mono text-lg tracking-widest upperc
+          -ase">Page Not Found</p>                                       
+        7 -      </div>                                                  
+       31 +    <div className="flex items-center shrink-0">              
+       32 +      {errorWords.map((word, i) => (                          
+       33 +        <span key={i} className="flex items-center">          
+       34 +          {word === "///" ? (                                 
+       35 +            <span className="font-display font-extrabold text-
+          +4xl md:text-7xl text-secondary/60 uppercase tracking-wide mx-8
+          +">                                                            
+       36 +              ///                                             
+       37 +            </span>                                           
+       38 +          ) : (                                               
+       39 +            <>                                                
+       40 +              <span className="font-display font-extrabold tex
+          +t-4xl md:text-7xl text-black uppercase tracking-wide mx-2">   
+       41 +                {word}                                        
+       42 +              </span>                                         
+       43 +              {i < errorWords.length - 1 && errorWords[i + 1] 
+          +!== "///" && (                                                
+       44 +                <span className="text-secondary text-3xl md:te
+          +xt-5xl mx-3 font-bold">                                       
+       45 +                  ●                                           
+       46 +                </span>                                       
+       47 +              )}                                              
+       48 +            </>                                               
+       49 +          )}                                                  
+       50 +        </span>                                               
+       51 +      ))}                                                     
+       52      </div>
+       53    );
+       54  }
+       55 +                                                              
+       56 +export default function NotFound() {                          
+       57 +  const [, setLocation] = useLocation();                      
+       58 +                                                              
+       59 +  return (                                                    
+       60 +    <main className="bg-background text-foreground min-h-scree
+          +n">                                                           
+       61 +      <Navbar />                                              
+       62 +                                                              
+       63 +      {/* Hero */}                                            
+       64 +      <section className="relative min-h-screen flex flex-col 
+          +justify-center items-center overflow-hidden pt-20">           
+       65 +        {/* Background layers */}                             
+       66 +        <div className="absolute inset-0 bg-gradient-to-r from
+          +-accent/10 via-transparent to-secondary/10" />                
+       67 +        <div className="absolute inset-0 bg-[linear-gradient(t
+          +o_right,rgba(247,148,29,0.05)_1px,transparent_1px),linear-grad
+          +ient(to_bottom,rgba(45,107,198,0.05)_1px,transparent_1px)] bg-
+          +[size:4rem_4rem]" />                                          
+       68 +        <div                                                  
+       69 +          className="absolute inset-0 opacity-[0.08] mix-blend
+          +-overlay pointer-events-none"                                 
+       70 +          style={{ backgroundImage: `url("data:image/svg+xml,%
+          +3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'
+          +%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalN
+          +oise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'
+          +/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter
+          +='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}                    
+       71 +        />                                                    
+       72 +                                                              
+       73 +        {/* Content */}                                       
+       74 +        <div className="relative z-10 w-full max-w-[1600px] mx
+          +-auto px-6 md:px-12 flex flex-col items-center text-center">  
+       75 +          <motion.div                                         
+       76 +            initial={{ y: 80, opacity: 0, scale: 0.9 }}       
+       77 +            animate={{ y: 0, opacity: 1, scale: 1 }}          
+       78 +            transition={{ duration: 1, ease: EASE }}          
+       79 +          >                                                   
+       80 +            <motion.h1                                        
+       81 +              className="font-display font-black text-[30vw] m
+          +d:text-[25vw] leading-[0.8] gradient-text glow-accent select-n
+          +one"                                                          
+       82 +              animate={{ x: [0, -3, 5, -2, 0], skewX: [0, -2, 
+          +1, 3, 0] }}                                                   
+       83 +              transition={{ repeat: Infinity, repeatDelay: 4, 
+          +duration: 0.4 }}                                              
+       84 +            >                                                 
+       85 +              404                                             
+       86 +            </motion.h1>                                      
+       87 +          </motion.div>                                       
+       88 +                                                              
+       89 +          <motion.p                                           
+       90 +            initial={{ letterSpacing: "0.5em", opacity: 0 }}  
+       91 +            animate={{ letterSpacing: "0.1em", opacity: 1 }}  
+       92 +            transition={{ duration: 1.2, delay: 0.3 }}        
+       93 +            className="font-display text-4xl md:text-7xl text-
+          +outline tracking-wide uppercase mt-4"                         
+       94 +          >                                                   
+       95 +            OUT OF BOUNDS                                     
+       96 +          </motion.p>                                         
+       97 +                                                              
+       98 +          <motion.p                                           
+       99 +            initial={{ opacity: 0, y: 20 }}                   
+      100 +            animate={{ opacity: 1, y: 0 }}                    
+      101 +            transition={{ duration: 0.6, delay: 0.6, ease: EAS
+          +E }}                                                          
+      102 +            className="font-sans text-lg md:text-xl text-foreg
+          +round/70 max-w-2xl text-center mt-8"                          
+      103 +          >                                                   
+      104 +            The page you're looking for has left the field. It
+          + might have been traded, moved, or never existed.             
+      105 +          </motion.p>                                         
+      106 +                                                              
+      107 +          <motion.button                                      
+      108 +            initial={{ opacity: 0, y: 20 }}                   
+      109 +            animate={{ opacity: 1, y: 0 }}                    
+      110 +            transition={{ duration: 0.6, delay: 0.8, ease: EAS
+          +E }}                                                          
+      111 +            onClick={() => setLocation("/")}                  
+      112 +            className="brutalist-button text-base flex items-c
+          +enter gap-3 mt-10"                                            
+      113 +            whileHover={{ scale: 1.02 }}                      
+      114 +            whileTap={{ scale: 0.98 }}                        
+      115 +          >                                                   
+      116 +            <ArrowLeft size={20} />                           
+      117 +            BACK TO HOME                                      
+      118 +          </motion.button>                                    
+      119 +        </div>                                                
+      120 +                                                              
+      121 +        {/* Corner label */}                                  
+      122 +        <motion.div                                           
+      123 +          initial={{ opacity: 0 }}                            
+      124 +          animate={{ opacity: 1 }}                            
+      125 +          transition={{ delay: 1.2, duration: 0.8 }}          
+      126 +          className="absolute bottom-12 left-6 md:left-12 font
+          +-mono text-xs text-foreground/40 tracking-widest hidden md:blo
+          +ck"                                                           
+      127 +        >                                                     
+      128 +          ERROR 404 // PAGE NOT FOUND                         
+      129 +        </motion.div>                                         
+      130 +                                                              
+      131 +        {/* Rotating geometric shapes */}                     
+      132 +        <motion.div                                           
+      133 +          initial={{ opacity: 0 }}                            
+      134 +          animate={{ opacity: 1 }}                            
+      135 +          transition={{ delay: 1.4, duration: 0.8 }}          
+      136 +          className="absolute bottom-12 right-6 md:right-12 hi
+          +dden md:flex gap-2"                                           
+      137 +        >                                                     
+      138 +          <motion.div className="w-4 h-4 bg-accent" animate={{
+          + rotate: [0, 90, 0] }} transition={{ repeat: Infinity, duratio
+          +n: 4, ease: "easeInOut" }} />                                 
+      139 +          <motion.div className="w-4 h-4 bg-secondary" animate
+          +={{ rotate: [0, -90, 0] }} transition={{ repeat: Infinity, dur
+          +ation: 4, ease: "easeInOut", delay: 0.5 }} />                 
+      140 +          <motion.div className="w-4 h-4 border-2 border-foreg
+          +round" animate={{ scale: [1, 1.3, 1] }} transition={{ repeat: 
+          +Infinity, duration: 2, ease: "easeInOut" }} />                
+      141 +        </motion.div>                                         
+      142 +      </section>                                              
+      143 +                                                              
+      144 +      {/* Error Marquee Banner */}                            
+      145 +      <motion.div                                             
+      146 +        initial={{ opacity: 0 }}                              
+      147 +        whileInView={{ opacity: 1 }}                          
+      148 +        viewport={{ once: true }}                             
+      149 +        className="w-full bg-gradient-to-r from-accent via-acc
+          +ent to-[#F5A623] border-y-4 border-foreground py-4 md:py-6 ove
+          +rflow-hidden flex items-center relative z-20"                 
+      150 +      >                                                       
+      151 +        <motion.div                                           
+      152 +          animate={{ x: ["0%", "-50%"] }}                     
+      153 +          transition={{ repeat: Infinity, ease: "linear", dura
+          +tion: 15 }}                                                   
+      154 +          className="flex whitespace-nowrap"                  
+      155 +        >                                                     
+      156 +          <MarqueeContent />                                  
+      157 +          <MarqueeContent />                                  
+      158 +        </motion.div>                                         
+      159 +      </motion.div>                                           
+      160 +                                                              
+      161 +      {/* Navigation Section */}                              
+      162 +      <section className="py-16 md:py-24 px-6 md:px-12">      
+      163 +        <div className="max-w-[1600px] mx-auto">              
+      164 +          <motion.div                                         
+      165 +            initial={{ opacity: 0, y: 30 }}                   
+      166 +            whileInView={{ opacity: 1, y: 0 }}                
+      167 +            viewport={{ once: true }}                         
+      168 +            transition={{ duration: 0.6 }}                    
+      169 +            className="mb-12"                                 
+      170 +          >                                                   
+      171 +            <h2 className="font-display text-4xl md:text-6xl l
+          +eading-none">                                                 
+      172 +              LOST?<br />                                     
+      173 +              <span className="text-accent">TRY THESE</span>  
+      174 +            </h2>                                             
+      175 +            <motion.div                                       
+      176 +              className="h-1 bg-gradient-to-r from-accent to-s
+          +econdary mt-8"                                                
+      177 +              initial={{ width: 0 }}                          
+      178 +              whileInView={{ width: 96 }}                     
+      179 +              viewport={{ once: true }}                       
+      180 +              transition={{ duration: 0.8, delay: 0.2 }}      
+      181 +            />                                                
+      182 +          </motion.div>                                       
+      183 +                                                              
+      184 +          <motion.div                                         
+      185 +            className="grid grid-cols-1 md:grid-cols-3 gap-[2p
+          +x]"                                                           
+      186 +            variants={stagger}                                
+      187 +            initial="hidden"                                  
+      188 +            whileInView="show"                                
+      189 +            viewport={{ once: true }}                         
+      190 +          >                                                   
+      191 +            {navCards.map((card) => (                         
+      192 +              <motion.div                                     
+      193 +                key={card.num}                                
+      194 +                variants={fadeUp}                             
+      195 +                className="border-4 border-foreground/20 p-8 m
+          +d:p-10 group cursor-pointer transition-all duration-300 hover:
+          +border-accent hover:bg-accent/5 relative overflow-hidden"     
+      196 +                whileHover={{ x: 4 }}                         
+      197 +                onClick={() => {                              
+      198 +                  if (card.external) {                        
+      199 +                    window.open(card.external, "_blank", "noop
+          +ener,noreferrer");                                            
+      200 +                  } else if (card.route) {                    
+      201 +                    setLocation(card.route);                  
+      202 +                  }                                           
+      203 +                }}                                            
+      204 +              >                                               
+      205 +                <span className="font-mono text-2xl text-secon
+          +dary/60 font-bold">{card.num}</span>                          
+      206 +                <h3 className="font-display text-3xl mt-2">{ca
+          +rd.title}</h3>                                                
+      207 +                <p className="font-sans text-foreground/60 mt-
+          +2">{card.desc}</p>                                            
+      208 +                <div className="absolute bottom-0 left-0 w-ful
+          +l h-1 bg-gradient-to-r from-accent to-secondary scale-x-0 grou
+          +p-hover:scale-x-100 transition-transform duration-500 origin-l
+          +eft" />                                                       
+      209 +              </motion.div>                                   
+      210 +            ))}                                               
+      211 +          </motion.div>                                       
+      212 +        </div>                                                
+      213 +      </section>                                              
+      214 +                                                              
+      215 +      <Footer />                                              
+      216 +    </main>                                                   
+      217 +  );                                                          
+      218 +}                                                             
+● Tasks 1-4 done. Now let me run typecheck and start the dev server for
+  Playwright testing in parallel.
+
+● Bash(cd C:/Users/hey/Documents/GitHub/MAGZ-26 && pnpm run typecheck 2>&1)
+  ⎿  Error: Exit code 2
+
+     > magz-26@0.0.0 typecheck C:\Users\hey\Documents\GitHub\MAGZ-26
+     > pnpm --filter @workspace/magz-website run typecheck
+
+
+     > @workspace/magz-website@0.0.0 typecheck 
+     C:\Users\hey\Documents\GitHub\MAGZ-26\artifacts\magz-website
+     > tsc -p tsconfig.json --noEmit
+
+     src/components/Brands.tsx(62,15): error TS2322: Type '{ hidden: { opacity: 
+     number; scale: number; }; show: { opacity: number; scale: number; 
+     transition: { duration: number; ease: number[]; }; }; }' is not assignable 
+     to type 'Variants'.
+
+     … +47 lines (ctrl+o to see all)
+
+● The typecheck shows pre-existing errors in 3 files (not from my changes) — all
+   related to Framer Motion's ease type needing a tuple instead of number[]. Let
+   me fix these.
+
+● Update(artifacts\magz-website\src\components\Services.tsx)
+  ⎿  Added 1 line, removed 1 line
+      49  
+      50  const slideUp = {
+      51    hidden: { opacity: 0, y: 40 },
+      52 -  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 
+         -[0.76, 0, 0.24, 1] } }                                         
+      52 +  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 
+         +[0.76, 0, 0.24, 1] as [number, number, number, number] } }     
+      53  };
+      54  
+      55  export function Services() {
+
+● Update(artifacts\magz-website\src\components\Brands.tsx)
+  ⎿  Added 1 line, removed 1 line
+      26  
+      27  const itemVariants = {
+      28    hidden: { opacity: 0, scale: 0.8 },
+      29 -  show: { opacity: 1, scale: 1, transition: { duration: 0.5, ea
+         -se: [0.76, 0, 0.24, 1] } }                                     
+      29 +  show: { opacity: 1, scale: 1, transition: { duration: 0.5, ea
+         +se: [0.76, 0, 0.24, 1] as [number, number, number, number] } } 
+      30  };
+      31  
+      32  export function Brands() {
+
+● Update(artifacts\magz-website\src\pages\CareersPage.tsx)
+  ⎿  Added 1 line, removed 1 line
+      66  
+      67  const fadeUp = {
+      68    hidden: { opacity: 0, y: 30 },
+      69 -  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 
+         -[0.76, 0, 0.24, 1] } }                                         
+      69 +  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 
+         +[0.76, 0, 0.24, 1] as [number, number, number, number] } }     
+      70  };
+      71  
+      72  export default function CareersPage() {
+
+● Now fix the fullColorOnHover property issue in Brands.tsx.
+
+  Read 1 file (ctrl+o to expand)
+
+● The fullColorOnHover property is referenced but never defined in the brands
+  array. The ternary branch falls through to the same result as the outer else
+  anyway. Let me simplify.
+
+● Update(artifacts\magz-website\src\components\Brands.tsx)
+  ⎿  Added 1 line, removed 5 lines
+      73                    src={brand.logo}
+      74                    alt={brand.name}
+      75                    className={`${brand.logoClass || 'max-w-[80%]
+           max-h-[70%]'} object-contain z-10 relative transition-all dura
+          tion-300 ${
+      76 -                    brand.fullColor                            
+      77 -                      ? ''                                     
+      78 -                      : brand.fullColorOnHover                 
+      79 -                        ? 'brightness-0 invert group-hover:brig
+         -htness-100 group-hover:invert-0'                               
+      80 -                        : 'brightness-0 invert'                
+      76 +                    brand.fullColor ? '' : 'brightness-0 invert
+         +'                                                              
+      77                    }`}
+      78                  />
+      79                )}
+
+● Now re-run the typecheck.
+
+● Bash(cd C:/Users/hey/Documents/GitHub/MAGZ-26 && pnpm run typecheck 2>&1)
+  ⎿  > magz-26@0.0.0 typecheck C:\Users\hey\Documents\GitHub\MAGZ-26
+     > pnpm --filter @workspace/magz-website run typecheck
+     … +4 lines (ctrl+o to expand)
+
+● Typecheck passes clean. Now let me start the dev server and run Playwright.
+
+● Bash(cd C:/Users/hey/Documents/GitHub/MAGZ-26 && pnpm run dev 2>&1 &)
+  ⎿  Running in the background (↓ to manage)
+
+● Bash(sleep 4 && curl -s -o /dev/null -w "%{http_code}" http://localhost:5173/)
+  ⎿  200
+  ⎿  (timeout 15s)
+
+● Dev server is running. Now write and run the Playwright test.
+
+● Write(test-404.cjs)
+  ⎿  Wrote 72 lines to test-404.cjs
+       1 const { chromium } = require('playwright');
+       2 
+       3 (async () => {
+       4   const browser = await chromium.launch({ headless: true });
+       5   const context = await browser.newContext({ viewport: { width: 
+         1280, height: 800 } });
+       6   const page = await context.newPage();
+       7 
+       8   console.log('--- Test 1: 404 page renders at non-existent rout
+         e ---');
+       9   await page.goto('http://localhost:5173/nonexistent-page', { wa
+         itUntil: 'networkidle' });
+      10   await page.waitForTimeout(1500);
+     … +62 lines (ctrl+o to expand)
+
+● Bash(cd C:/Users/hey/Documents/GitHub/MAGZ-26 &&
+      NODE_PATH="C:/Users/hey/AppData/Roaming/npm/node_modules" node
+      test-404.cjs 2>&1)
+  ⎿  --- Test 1: 404 page renders at non-existent route ---
+       h1 text: "404"
+       "OUT OF BOUNDS" visible: true
+     … +15 lines (ctrl+o to expand)
+  ⎿  (timeout 1m)
+
+● All tests pass. Let me check the screenshots.
+
+  Read 2 files (ctrl+o to expand)
+● Screenshots look great. The 404 page renders perfectly with:
+  - Gradient "404" with glow effect
+  - "OUT OF BOUNDS" with text-outline
+  - Body text and "BACK TO HOME" button
+  - Orange marquee error banner
+  - Navigation section (confirmed visible in tests)
+  - Footer with MAGZ watermark
+  - Responsive mobile layout
+
+  Let me clean up test files and mark complete.
+
+● Bash(rm C:/Users/hey/Documents/GitHub/MAGZ-26/test-404.cjs
+      C:/Users/hey/Documents/GitHub/MAGZ-26/test-404-desktop.png
+      C:/Users/hey/Documents/GitHub/MAGZ-26/test-404-…)
+  ⎿  Done
+
+> Test thoroughly visually when you're done on a 404 page, just to make sure   
+that it looks accurate and consistent with the rest of the design of the       
+website. When you're done and confident in your work, go ahead and update the  
+changelog, stage, commit, and push to production. Thank you.                   
+
+● Got it — let me do a thorough visual test of the 404 page against the rest of
+  the site first, then update the changelog, commit, and push.
+
+● Write(visual-test-404.cjs)
+  ⎿  Wrote 195 lines to visual-test-404.cjs
+      1 const { chromium } = require('playwright');
+      2 
+      3 (async () => {
+      4   const browser = await chromium.launch({ headless: true });
+      5 
+      6   // ===== DESKTOP TESTS (1280x800) =====
+      7   console.log('=== DESKTOP (1280x800) ===\n');
+      8   const desktopCtx = await browser.newContext({ viewport: { width
+        : 1280, height: 800 } });
+      9   const dp = await desktopCtx.newPage();
+     … +185 lines (ctrl+o to expand)
+
+● Bash(cd C:/Users/hey/Documents/GitHub/MAGZ-26 &&
+      NODE_PATH="C:/Users/hey/AppData/Roaming/npm/node_modules" node
+      visual-test-404.cjs 2>&1)
+  ⎿  Error: Exit code 1
+     === DESKTOP (1280x800) ===
+
+     1. Capturing Home page for visual comparison...
+     node:internal/process/promises:394
+         triggerUncaughtException(err, true /* fromPromise */);
+         ^
+
+     page.goto: Timeout 30000ms exceeded.
+     Call log:
+     … +7 lines (ctrl+o to see all)
+
+● Bash(curl -s -o /dev/null -w "%{http_code}" http://localhost:5173/ 2>&1 ||
+      echo "Server not running")
+  ⎿  200
+
+● Server is running. The timeout was likely from networkidle waiting for
+  external assets. Let me simplify the test with domcontentloaded and shorter
+  timeouts.
+
+● Write(visual-test-404.cjs)
+  ⎿  Added 60 lines, removed 150 lines
+        3  (async () => {
+        4    const browser = await chromium.launch({ headless: true });
+        5  
+        6 -  // ===== DESKTOP TESTS (1280x800) =====                     
+        6 +  // ===== DESKTOP (1280x800) =====                           
+        7    console.log('=== DESKTOP (1280x800) ===\n');
+        8 -  const desktopCtx = await browser.newContext({ viewport: { wi
+          -dth: 1280, height: 800 } });                                  
+        9 -  const dp = await desktopCtx.newPage();                      
+        8 +  const dp = await browser.newPage({ viewport: { width: 1280, 
+          +height: 800 } });                                             
+        9  
+       11 -  // Screenshot Home page for comparison                      
+       12 -  console.log('1. Capturing Home page for visual comparison...
+          -');                                                           
+       13 -  await dp.goto('http://localhost:5173/', { waitUntil: 'networ
+          -kidle' });                                                    
+       14 -  await dp.waitForTimeout(2000);                              
+       10 +  // Home page reference                                      
+       11 +  console.log('1. Capturing Home page hero for reference...');
+       12 +  await dp.goto('http://localhost:5173/', { waitUntil: 'domcon
+          +tentloaded', timeout: 10000 });                               
+       13 +  await dp.waitForTimeout(3000);                              
+       14    await dp.screenshot({ path: 'vis-home-hero.png' });
+       16 -  console.log('   Home hero captured');                       
+       15  
+       18 -  // Navigate to 404                                          
+       19 -  console.log('\n2. Capturing 404 page sections...');         
+       20 -  await dp.goto('http://localhost:5173/nonexistent', { waitUnt
+          -il: 'networkidle' });                                         
+       21 -  await dp.waitForTimeout(2000);                              
+       22 -                                                              
+       23 -  // 404 Hero viewport                                        
+       16 +  // 404 page                                                 
+       17 +  console.log('2. Capturing 404 page...');                    
+       18 +  await dp.goto('http://localhost:5173/nonexistent', { waitUnt
+          +il: 'domcontentloaded', timeout: 10000 });                    
+       19 +  await dp.waitForTimeout(3000);                              
+       20    await dp.screenshot({ path: 'vis-404-hero.png' });
+       25 -  console.log('   404 hero captured');                        
+       21  
+       27 -  // Check Navbar consistency                                 
+       28 -  console.log('\n3. Checking Navbar consistency...');         
+       29 -  const navBg = await dp.locator('nav').evaluate(el => getComp
+          -utedStyle(el).backgroundColor);                               
+       30 -  console.log(`   Navbar background: ${navBg}`);              
+       31 -  const navBorder = await dp.locator('nav').evaluate(el => get
+          -ComputedStyle(el).borderBottomWidth);                         
+       32 -  console.log(`   Navbar border-bottom: ${navBorder}`);       
+       33 -  const navLinks = await dp.locator('nav ul li').count();     
+       34 -  console.log(`   Nav link count: ${navLinks}`);              
+       35 -  const findUsBtn = await dp.locator('nav').getByText('FIND US
+          -').isVisible();                                               
+       36 -  console.log(`   FIND US button visible: ${findUsBtn}`);     
+       22 +  // Check styling consistency                                
+       23 +  console.log('\n3. Checking style consistency...');          
+       24 +  const navStyle = await dp.locator('nav').evaluate(el => {   
+       25 +    const s = getComputedStyle(el);                           
+       26 +    return { bg: s.backgroundColor, borderBottom: s.borderBott
+          +omWidth, position: s.position };                              
+       27 +  });                                                         
+       28 +  console.log(`   Nav: position=${navStyle.position}, border-b
+          +ottom=${navStyle.borderBottom}`);                             
+       29  
+       38 -  // Check 404 text styling                                   
+       39 -  console.log('\n4. Checking 404 text styling...');           
+       30    const h1Style = await dp.locator('h1').first().evaluate(el =
+           > {
+       31      const s = getComputedStyle(el);
+       42 -    return {                                                  
+       43 -      fontFamily: s.fontFamily,                               
+       44 -      fontSize: s.fontSize,                                   
+       45 -      fontWeight: s.fontWeight,                               
+       46 -      backgroundImage: s.backgroundImage,                     
+       47 -      textFillColor: s.webkitTextFillColor || 'n/a',          
+       48 -    };                                                        
+       32 +    return { fontFamily: s.fontFamily.split(',')[0], fontWeigh
+          +t: s.fontWeight, fontSize: s.fontSize };                      
+       33    });
+       50 -  console.log(`   Font family: ${h1Style.fontFamily}`);       
+       51 -  console.log(`   Font size: ${h1Style.fontSize}`);           
+       52 -  console.log(`   Font weight: ${h1Style.fontWeight}`);       
+       53 -  console.log(`   Background image (gradient): ${h1Style.backg
+          -roundImage.substring(0, 60)}...`);                            
+       34 +  console.log(`   404 h1: font=${h1Style.fontFamily} weight=${
+          +h1Style.fontWeight} size=${h1Style.fontSize}`);               
+       35  
+       55 -  // Check "OUT OF BOUNDS" text-outline effect                
+       56 -  const outlineStyling = await dp.getByText('OUT OF BOUNDS').e
+          -valuate(el => {                                               
+       36 +  const outlineStyle = await dp.getByText('OUT OF BOUNDS').eva
+          +luate(el => {                                                 
+       37      const s = getComputedStyle(el);
+       58 -    return {                                                  
+       59 -      webkitTextStroke: s.webkitTextStrokeWidth + ' ' + s.webk
+          -itTextStrokeColor,                                            
+       60 -      color: s.color,                                         
+       61 -    };                                                        
+       38 +    return { stroke: s.webkitTextStrokeWidth, color: s.color }
+          +;                                                             
+       39    });
+       63 -  console.log(`   "OUT OF BOUNDS" text-stroke: ${outlineStylin
+          -g.webkitTextStroke}`);                                        
+       64 -  console.log(`   "OUT OF BOUNDS" color: ${outlineStyling.colo
+          -r}`);                                                         
+       40 +  console.log(`   OUT OF BOUNDS: stroke=${outlineStyle.stroke}
+          +, color=${outlineStyle.color}`);                              
+       41  
+       66 -  // Check brutalist-button styling                           
+       67 -  console.log('\n5. Checking BACK TO HOME button styling...');
+       42    const btnStyle = await dp.getByText('BACK TO HOME').evaluate
+           (el => {
+       43      const s = getComputedStyle(el);
+       70 -    return {                                                  
+       71 -      fontFamily: s.fontFamily,                               
+       72 -      textTransform: s.textTransform,                         
+       73 -      letterSpacing: s.letterSpacing,                         
+       74 -      borderWidth: s.borderWidth,                             
+       75 -      borderColor: s.borderColor,                             
+       76 -      boxShadow: s.boxShadow,                                 
+       77 -    };                                                        
+       44 +    return { font: s.fontFamily.split(',')[0], transform: s.te
+          +xtTransform, shadow: s.boxShadow.substring(0, 40) };          
+       45    });
+       79 -  console.log(`   Font: ${btnStyle.fontFamily.substring(0, 30)
+          -}...`);                                                       
+       80 -  console.log(`   Text transform: ${btnStyle.textTransform}`);
+       81 -  console.log(`   Letter spacing: ${btnStyle.letterSpacing}`);
+       82 -  console.log(`   Border: ${btnStyle.borderWidth} ${btnStyle.b
+          -orderColor}`);                                                
+       83 -  console.log(`   Box shadow: ${btnStyle.boxShadow}`);        
+       46 +  console.log(`   Button: font=${btnStyle.font}, transform=${b
+          +tnStyle.transform}, shadow=${btnStyle.shadow}...`);           
+       47  
+       85 -  // Scroll to marquee and capture                            
+       86 -  console.log('\n6. Capturing marquee banner...');            
+       48 +  // Check decorative elements                                
+       49 +  const cornerLabel = await dp.getByText('ERROR 404 // PAGE NO
+          +T FOUND').isVisible();                                        
+       50 +  console.log(`   Corner label (desktop): ${cornerLabel}`);   
+       51 +                                                              
+       52 +  // Border-radius check                                      
+       53 +  const brCount = await dp.evaluate(() => {                   
+       54 +    let n = 0;                                                
+       55 +    document.querySelectorAll('*').forEach(el => {            
+       56 +      if (getComputedStyle(el).borderRadius !== '0px') n++;   
+       57 +    });                                                       
+       58 +    return n;                                                 
+       59 +  });                                                         
+       60 +  console.log(`   Non-zero border-radius elements: ${brCount}`
+          +);                                                            
+       61 +                                                              
+       62 +  // Scroll to marquee                                        
+       63 +  console.log('\n4. Marquee section...');                     
+       64    await dp.evaluate(() => window.scrollBy(0, window.innerHeigh
+           t));
+       65    await dp.waitForTimeout(500);
+       66    await dp.screenshot({ path: 'vis-404-marquee.png' });
+       90 -  console.log('   Marquee section captured');                 
+       67  
+       92 -  // Check marquee colors match Home marquee                  
+       93 -  const marqueeElements = await dp.locator('.bg-gradient-to-r.
+          -from-accent').count();                                        
+       94 -  console.log(`   Marquee gradient elements found: ${marqueeEl
+          -ements}`);                                                    
+       95 -                                                              
+       96 -  // Scroll to nav cards section                              
+       97 -  console.log('\n7. Capturing navigation section...');        
+       68 +  // Scroll to nav cards                                      
+       69 +  console.log('5. Navigation cards...');                      
+       70    await dp.evaluate(() => window.scrollTo(0, document.body.scr
+           ollHeight - 1200));
+       71    await dp.waitForTimeout(500);
+       72    await dp.screenshot({ path: 'vis-404-nav-cards.png' });
+      101 -  console.log('   Nav cards section captured');               
+       73 +  const cardCount = await dp.locator('text=Back to the startin
+          +g lineup').isVisible();                                       
+       74 +  console.log(`   HOME card visible: ${cardCount}`);          
+       75  
+      103 -  // Check card styling                                       
+      104 -  const cardCount = await dp.locator('.border-4.border-foregro
+          -und\\/20').count();                                           
+      105 -  console.log(`   Navigation cards found: ${cardCount}`);     
+      106 -  const gradientBars = await dp.locator('.bg-gradient-to-r.fro
+          -m-accent.to-secondary.scale-x-0').count();                    
+      107 -  console.log(`   Hover gradient bars found: ${gradientBars}`)
+          -;                                                             
+      108 -                                                              
+      109 -  // Check Footer consistency                                 
+      110 -  console.log('\n8. Checking Footer consistency...');         
+       76 +  // Footer                                                   
+       77 +  console.log('6. Footer...');                                
+       78    await dp.evaluate(() => window.scrollTo(0, document.body.scr
+           ollHeight));
+       79    await dp.waitForTimeout(500);
+       80    await dp.screenshot({ path: 'vis-404-footer.png' });
+      114 -                                                              
+       81    const footerBg = await dp.locator('footer').evaluate(el => g
+           etComputedStyle(el).backgroundColor);
+      116 -  console.log(`   Footer background: ${footerBg}`);           
+      117 -  const copyright = await dp.locator('footer').getByText('MAGZ
+          - MARKETING').isVisible();                                     
+      118 -  console.log(`   Copyright visible: ${copyright}`);          
+      119 -  const backToTop = await dp.locator('footer').getByText('BACK
+          - TO TOP').isVisible();                                        
+      120 -  console.log(`   Back to top visible: ${backToTop}`);        
+      121 -  const socials = await dp.locator('footer a[target="_blank"]'
+          -).count();                                                    
+      122 -  console.log(`   Social links count: ${socials}`);           
+       82 +  console.log(`   Footer bg: ${footerBg}`);                   
+       83  
+      124 -  // Check decorative elements                                
+      125 -  console.log('\n9. Checking decorative elements...');        
+      126 -  await dp.evaluate(() => window.scrollTo(0, 0));             
+      127 -  await dp.waitForTimeout(500);                               
+      128 -  const cornerLabel = await dp.getByText('ERROR 404 // PAGE NO
+          -T FOUND').isVisible();                                        
+      129 -  console.log(`   Corner label visible (desktop): ${cornerLabe
+          -l}`);                                                         
+       84 +  // ===== MOBILE (375x812) =====                             
+       85 +  console.log('\n=== MOBILE (375x812) ===\n');                
+       86 +  const mp = await browser.newPage({ viewport: { width: 375, h
+          +eight: 812 } });                                              
+       87 +  await mp.goto('http://localhost:5173/missing-page', { waitUn
+          +til: 'domcontentloaded', timeout: 10000 });                   
+       88 +  await mp.waitForTimeout(3000);                              
+       89  
+      131 -  // Check no border-radius anywhere                          
+      132 -  const borderRadii = await dp.evaluate(() => {               
+      133 -    const all = document.querySelectorAll('*');               
+      134 -    let nonZero = 0;                                          
+      135 -    all.forEach(el => {                                       
+      136 -      const br = getComputedStyle(el).borderRadius;           
+      137 -      if (br && br !== '0px') nonZero++;                      
+      138 -    });                                                       
+      139 -    return nonZero;                                           
+      140 -  });                                                         
+      141 -  console.log(`   Elements with non-zero border-radius: ${bord
+          -erRadii}`);                                                   
+      142 -                                                              
+      143 -  // ===== MOBILE TESTS (375x812) =====                       
+      144 -  console.log('\n\n=== MOBILE (375x812) ===\n');              
+      145 -  const mobileCtx = await browser.newContext({ viewport: { wid
+          -th: 375, height: 812 } });                                    
+      146 -  const mp = await mobileCtx.newPage();                       
+      147 -                                                              
+      148 -  await mp.goto('http://localhost:5173/does-not-exist', { wait
+          -Until: 'networkidle' });                                      
+      149 -  await mp.waitForTimeout(2000);                              
+      150 -                                                              
+      151 -  console.log('10. Mobile hero...');                          
+       90    await mp.screenshot({ path: 'vis-404-mobile-hero.png' });
+      153 -  const mobileH1 = await mp.locator('h1').first().isVisible();
+      154 -  console.log(`    404 visible: ${mobileH1}`);                
+      155 -  const mobileOutOfBounds = await mp.getByText('OUT OF BOUNDS'
+          -).isVisible();                                                
+      156 -  console.log(`    "OUT OF BOUNDS" visible: ${mobileOutOfBound
+          -s}`);                                                         
+      157 -  const mobileBtn = await mp.getByText('BACK TO HOME').isVisib
+          -le();                                                         
+      158 -  console.log(`    Button visible: ${mobileBtn}`);            
+      159 -                                                              
+      160 -  // Corner label should be hidden on mobile                  
+       91    const mobileCorner = await mp.getByText('ERROR 404 // PAGE N
+           OT FOUND').isVisible();
+      162 -  console.log(`    Corner label hidden on mobile: ${!mobileCor
+          -ner}`);                                                       
+      163 -                                                              
+      164 -  // Mobile hamburger menu                                    
+      165 -  const hamburger = await mp.locator('nav button.md\\:hidden')
+          -.isVisible();                                                 
+      166 -  console.log(`    Hamburger menu visible: ${hamburger}`);    
+      167 -                                                              
+      168 -  console.log('\n11. Mobile full page...');                   
+       92 +  console.log(`   Corner label hidden on mobile: ${!mobileCorn
+          +er}`);                                                        
+       93    await mp.screenshot({ path: 'vis-404-mobile-full.png', fullP
+           age: true });
+      170 -  console.log('    Full page mobile screenshot saved');       
+       94  
+      172 -  // ===== TABLET TEST (768x1024) =====                       
+      173 -  console.log('\n\n=== TABLET (768x1024) ===\n');             
+      174 -  const tabletCtx = await browser.newContext({ viewport: { wid
+          -th: 768, height: 1024 } });                                   
+      175 -  const tp = await tabletCtx.newPage();                       
+      176 -  await tp.goto('http://localhost:5173/404-test', { waitUntil:
+          - 'networkidle' });                                            
+      177 -  await tp.waitForTimeout(2000);                              
+       95 +  // ===== TABLET (768x1024) =====                            
+       96 +  console.log('\n=== TABLET (768x1024) ===\n');               
+       97 +  const tp = await browser.newPage({ viewport: { width: 768, h
+          +eight: 1024 } });                                             
+       98 +  await tp.goto('http://localhost:5173/test-404', { waitUntil:
+          + 'domcontentloaded', timeout: 10000 });                       
+       99 +  await tp.waitForTimeout(3000);                              
+      100    await tp.screenshot({ path: 'vis-404-tablet.png', fullPage: 
+           true });
+      179 -  console.log('12. Tablet full page captured');               
+      101 +  console.log('   Tablet screenshot saved');                  
+      102  
+      181 -  // ===== SUMMARY =====                                      
+      182 -  console.log('\n\n========== VISUAL TEST SUMMARY ==========')
+          -;                                                             
+      183 -  console.log('Screenshots saved:');                          
+      184 -  console.log('  vis-home-hero.png        — Home page hero (re
+          -ference)');                                                   
+      185 -  console.log('  vis-404-hero.png         — 404 hero section')
+          -;                                                             
+      186 -  console.log('  vis-404-marquee.png      — 404 marquee banner
+          -');                                                           
+      187 -  console.log('  vis-404-nav-cards.png    — 404 navigation car
+          -ds');                                                         
+      188 -  console.log('  vis-404-footer.png       — 404 footer');     
+      189 -  console.log('  vis-404-mobile-hero.png  — 404 mobile hero');
+      190 -  console.log('  vis-404-mobile-full.png  — 404 mobile full pa
+          -ge');                                                         
+      191 -  console.log('  vis-404-tablet.png       — 404 tablet full pa
+          -ge');                                                         
+      192 -  console.log('==========================================');  
+      193 -                                                              
+      103 +  console.log('\n=== ALL VISUAL TESTS COMPLETE ===');         
+      104    await browser.close();
+      105  })();
+
+● Bash(cd C:/Users/hey/Documents/GitHub/MAGZ-26 &&
+      NODE_PATH="C:/Users/hey/AppData/Roaming/npm/node_modules" node
+      visual-test-404.cjs 2>&1)
+  ⎿  === DESKTOP (1280x800) ===
+
+     1. Capturing Home page hero for reference...
+     … +26 lines (ctrl+o to expand)
+  ⎿  (timeout 1m 30s)
+
+● All styling checks pass. Let me review the screenshots.
+
+  Read 7 files (ctrl+o to expand)
+
+● Everything looks visually consistent with the site:
+
+  - Navbar: Fixed, same logo + links + "FIND US" button, hamburger on mobile
+  - 404 hero: Guton Black 900 weight, gradient-text, glow, noise/grid
+  backgrounds
+  - OUT OF BOUNDS: text-outline (2px stroke, transparent fill) matches brand
+  text effects
+  - Button: Space Mono uppercase, brutalist-button with offset shadow
+  - Marquee: Orange gradient banner with black text, matching Home marquee
+  exactly
+  - Nav cards: 3-column grid with numbered blue labels, border-4 style, gradient
+   underline hover
+  - Footer: Inverted colors (#F5F5F5 bg), "READY TO GROW?", menu + social links,
+   "BACK TO TOP"
+  - Border-radius: 0 non-zero elements across entire page
+  - Responsive: Corner labels hidden on mobile, hamburger visible, proper text
+  scaling
+  - Tablet: All elements render with desktop decorations at md breakpoint
+
+  Clean up test files, then proceed to changelog + commit + push.
+
+● Bash(rm C:/Users/hey/Documents/GitHub/MAGZ-26/vis-*.png
+      C:/Users/hey/Documents/GitHub/MAGZ-26/visual-test-404.cjs)
+  ⎿  Done
+
+  Searched for 1 pattern, read 1 file (ctrl+o to expand)
+
+● Update(CHANGELOG.md)
+  ⎿  Added 10 lines
+       1  # Changelog
+       2  
+       3 +## [1.4.0] - 2026-03-30                                        
+       4 +                                                               
+       5 +### Added                                                      
+       6 +- Fully branded 404 page with animated hero ("404" gradient tex
+         +t with glitch effect, "OUT OF BOUNDS" text-outline subtitle), e
+         +rror marquee banner, and 3-card navigation section (Home, Caree
+         +rs, Find Us)                                                   
+       7 +- Comprehensive `DESIGN.md` design system reference documenting
+         + brand identity, colors, typography, spacing, borders, custom C
+         +SS utilities, Framer Motion animation patterns, Lenis smooth sc
+         +roll, Pretext heading measurement, accordion pattern, backgroun
+         +d layers, component inventory, page compositions, section IDs, 
+         +external assets, icon usage, responsive breakpoints, routing, a
+         +nd dependencies                                                
+       8 +                                                               
+       9 +### Fixed                                                      
+      10 +- Pre-existing TypeScript errors in Brands.tsx, Services.tsx, a
+         +nd CareersPage.tsx where Framer Motion `ease` arrays were typed
+         + as `number[]` instead of `[number, number, number, number]` tu
+         +ples                                                           
+      11 +- Removed unreachable `fullColorOnHover` code branch in Brands.
+         +tsx                                                            
+      12 +                                                               
+      13  ## [1.3.1] - 2026-03-30
+      14  
+      15  ### Fixed
+
+● Now let me stage, commit, and push.
+
+● Bash(cd C:/Users/hey/Documents/GitHub/MAGZ-26 && git status)  ⎿  On branch main
+     Your branch is up to date with 'origin/main'.
+     … +16 lines (ctrl+o to expand)
+
+● Bash(cd C:/Users/hey/Documents/GitHub/MAGZ-26 && git diff --stat)
+  ⎿  warning: in the working copy of 'artifacts/magz-website/src/components
+     /Brands.tsx', LF will be replaced by CRLF the next time Git touches it
+     warning: in the working copy of 'artifacts/magz-website/src/components
+     … +12 lines (ctrl+o to expand)
+
+● Bash(cd C:/Users/hey/Documents/GitHub/MAGZ-26 && git log --oneline -5)
+  ⎿  2b83c8c fix: Increase accordion scroll timeout to wait for animations
+     to complete
+     3f2ddec Add physical address to Careers page CTA section
+     … +6 lines (ctrl+o to expand)
+
+● git-master(Commit and push to production)
+  ⎿  Done (6 tool uses · 23.7k tokens · 28s)
+  (ctrl+o to expand)
+
+● All done. Here's the summary:
+
+  404 Page (not-found.tsx) — Fully rewritten with:
+  - Animated "404" in gradient text (orange→blue) with periodic glitch effect
+  - "OUT OF BOUNDS" subtitle using text-outline stroke effect
+  - Body copy + "BACK TO HOME" brutalist-button with ArrowLeft icon
+  - Noise texture, grid pattern, and gradient background layers
+  - Rotating geometric decorations + corner label (desktop only)
+  - Error marquee banner scrolling "OUT OF BOUNDS /// PAGE NOT FOUND /// ERROR
+  404"
+  - "LOST? TRY THESE" section with 3 navigation cards (Home, Careers, Find Us)
+  - Navbar + Footer wrapping everything, matching all other pages
+
+  DESIGN.md — Comprehensive design system reference covering all 19 sections:
+  brand identity, colors, typography, spacing, borders, CSS utilities, Framer
+  Motion animations, Lenis smooth scroll, Pretext measurement, accordion
+  pattern, background patterns, component inventory, page compositions, section
+  IDs, external assets, icons, breakpoints, routing, and dependencies.
+
+  TypeScript fixes — Resolved pre-existing type errors in Brands.tsx,
+  Services.tsx, and CareersPage.tsx (ease tuple types + dead code removal).
+  Typecheck now passes clean.
+
+  Pushed to origin/main as commit 40b125c — Vercel will auto-deploy.
+
+✻ Brewed for 13m 24s
+
+● Agent "Deep codebase analysis for design.md" completed
+
+● Background command "Start Vite dev server" completed (exit code 0)
+
+● Everything is done and deployed. The deep codebase analysis agent also
+  finished — its findings align with what I already captured in the DESIGN.md,
+  so no updates needed there.
+
+  Recap of what shipped in v1.4.0:
+
+  1. 404 page — Full branded experience with animated gradient "404" + glitch
+  effect, "OUT OF BOUNDS" text-outline, error marquee banner, 3-card navigation
+  section, Navbar + Footer
+  2. DESIGN.md — 19-section design system reference covering every aspect of the
+   site's visual/interactive identity
+  3. TypeScript fixes — Resolved 4 pre-existing type errors across Brands,
+  Services, and CareersPage
+
+  Commit 40b125c pushed to origin/main — Vercel auto-deploy should be live
+  shortly.
+
+> can you figure out how to configure my vercel deployment to use the 404       
+correctly instead of the default vercel 404 error page?                         
+
+● Explore(Explore Vercel config and routing)
+  ⎿  Done (26 tool uses · 135.4k tokens · 42s)
+  (ctrl+o to expand)
+
+● The issue is clear — no vercel.json exists, so Vercel serves its default 404
+  instead of letting the SPA handle routing. Simple fix:
+
+● Write(vercel.json)
+  ⎿  Wrote 5 lines to vercel.json
+      1 {
+      2   "rewrites": [
+      3     { "source": "/(.*)", "destination": "/" }
+      4   ]
+      5 }
+
+● This tells Vercel to serve index.html for all routes that don't match a static
+   file, so Wouter's catch-all <Route component={NotFound} /> handles the 404
+  rendering client-side.
+
+● git-master(Commit and push vercel.json)
+  ⎿  Done (5 tool uses · 22.4k tokens · 23s)
+  (ctrl+o to expand)
+
+● Pushed 7f0501f. Once Vercel redeploys, any non-existent route will load the
+  SPA and your custom 404 page will render instead of Vercel's default.
+
+✻ Churned for 1m 29s
+
+> update changleopgs too                                                        
+
+  Read 1 file (ctrl+o to expand)
+
+● Update(CHANGELOG.md)
+  ⎿  Added 5 lines
+       1  # Changelog
+       2  
+       3 +## [1.4.1] - 2026-03-30                                        
+       4 +                                                               
+       5 +### Added                                                      
+       6 +- `vercel.json` with SPA catch-all rewrite (`/(.*) → /`) so Ver
+         +cel serves `index.html` for all non-static routes, allowing the
+         + client-side Wouter router to render the custom 404 page instea
+         +d of Vercel's default error page                               
+       7 +                                                               
+       8  ## [1.4.0] - 2026-03-30
+       9  
+      10  ### Added
+
+> then re-commit and push 
+
+● git-master(Commit and push changelog update)
+  ⎿  Done (4 tool uses · 22.0k tokens · 18s)
+  (ctrl+o to expand)
+
+● Done — f179892 pushed with the v1.4.1 changelog entry.
+
+✻ Cooked for 34s
