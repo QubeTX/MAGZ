@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const brands = [
-  { name: "Buffalo Wild Wings", url: "https://www.buffalowildwings.com/", logo: "https://magzmarketing.com/brandLogos/buffalo-wild-wings-logo.png", fullColor: true },
+  { name: "Buffalo Wild Wings", url: "https://www.buffalowildwings.com/", logo: "https://magzmarketing.com/brandLogos/buffalo-wild-wings-logo.png", fullColorOnHover: true },
   { name: "PGA of America", url: "https://www.pga.com/", logo: "https://magzmarketing.com/brandLogos/pga.png" },
   { name: "Panini", url: "https://www.paniniamerica.net/", logo: "https://magzmarketing.com/brandLogos/panini-group-logo.png", fullColor: true },
   { name: "Scheels", url: "https://www.scheels.com/", logo: "https://magzmarketing.com/brandLogos/ScheelsLogo.svg" },
@@ -73,7 +73,11 @@ export function Brands() {
                   src={brand.logo}
                   alt={brand.name}
                   className={`max-w-[80%] max-h-[70%] object-contain z-10 relative transition-all duration-300 ${
-                    brand.fullColor ? '' : 'brightness-0 invert'
+                    brand.fullColor
+                      ? ''
+                      : brand.fullColorOnHover
+                        ? 'brightness-0 invert group-hover:brightness-100 group-hover:invert-0'
+                        : 'brightness-0 invert'
                   }`}
                 />
               )}
