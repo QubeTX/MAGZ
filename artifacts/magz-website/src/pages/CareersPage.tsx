@@ -157,7 +157,13 @@ export default function CareersPage() {
                 <h3 className="font-display text-4xl md:text-5xl leading-none mb-2">
                   {card.title}
                 </h3>
-                <h4 className="font-display text-2xl md:text-3xl text-accent mb-6">
+                <h4
+                  className="font-display text-2xl md:text-3xl mb-6"
+                  style={{
+                    color: "transparent",
+                    WebkitTextStroke: "1.5px #F7941D",
+                  }}
+                >
                   {card.subtitle}
                 </h4>
                 <p className="font-sans text-base md:text-lg leading-relaxed text-foreground/70">
