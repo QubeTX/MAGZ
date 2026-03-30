@@ -414,8 +414,11 @@ export default function CareersPage() {
             <h2 className="font-display text-5xl md:text-7xl leading-none mb-6">
               READY TO MAKE AN <span className="text-accent">IMPACT?</span>
             </h2>
-            <p className="font-sans text-xl md:text-2xl mb-12 max-w-2xl mx-auto text-foreground/60">
+            <p className="font-sans text-xl md:text-2xl mb-4 max-w-2xl mx-auto text-foreground/60">
               Connect with us to explore current opportunities.
+            </p>
+            <p className="font-mono text-sm tracking-widest text-foreground/40 mb-12">
+              5 Cowboys Way Ste 300, Frisco, TX
             </p>
             <motion.a
               href="https://www.linkedin.com/company/magzsports/"
