@@ -45,7 +45,7 @@ export function Hero() {
             initial={{ letterSpacing: "0.8em", opacity: 0 }}
             animate={{ letterSpacing: "0.3em", opacity: 1 }}
             transition={{ duration: 1.2, delay: 0.3 }}
-            className="font-mono text-xl md:text-2xl text-accent mb-0 relative z-20 glow-accent"
+            className="font-mono text-xl md:text-2xl text-accent mb-2 relative z-20 glow-accent"
           >
             WE ARE
           </motion.p>
