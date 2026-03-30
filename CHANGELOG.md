@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.4.1] - 2026-03-30
+
+### Added
+- `vercel.json` with SPA catch-all rewrite (`/(.*) → /`) so Vercel serves `index.html` for all non-static routes, allowing the client-side Wouter router to render the custom 404 page instead of Vercel's default error page
+
 ## [1.4.0] - 2026-03-30
 
 ### Added
