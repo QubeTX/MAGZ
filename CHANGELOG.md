@@ -5,7 +5,7 @@
 ### Changed
 - Primary font from Makira to Guton Sans Serif (same 6 weights, self-hosted from `public/fonts/Guton/`)
 - Stats/metrics numbers weight to ExtraBold (800) for better readability
-- "Join the Team" image: capped height to 500px, crops from bottom up (object-top) to stay proportional with left-side content
+- "Join the Team" image: capped height to 500px with center-cropping to stay proportional with left-side content
 - Brand logo grid: per-logo sizing for visual consistency across different aspect ratios
   - Scaled down oversized logos (Buffalo Wild Wings, Charlie Hustle, Fore All)
   - Scaled up undersized logos (No Rivals, Q30, Undrafted, Socialpruf)
