@@ -33,9 +33,6 @@ export function Gallery() {
           HIGHLIGHTING <br/>
           <span className="text-secondary">ATHLETES</span>
         </h2>
-        <div className="hidden md:block font-mono text-sm tracking-widest text-foreground/50">
-          [{images.length} ARCHIVED FILES]
-        </div>
       </motion.div>
 
       <div className="w-full bg-border/50">
