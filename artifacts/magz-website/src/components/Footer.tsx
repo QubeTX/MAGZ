@@ -107,7 +107,7 @@ export function Footer() {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <p>© 2025 MAGZ MARKETING. ALL RIGHTS RESERVED.</p>
+          <p>© {new Date().getFullYear()} MAGZ MARKETING. ALL RIGHTS RESERVED.</p>
           <motion.button
             onClick={scrollToTop}
             className="flex items-center gap-2 border-2 border-background px-4 py-2 transition-colors"
