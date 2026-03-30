@@ -16,7 +16,7 @@ export function Hero() {
     <section ref={ref} className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden pt-20">
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
         <video
-          src="https://magz.s3.us-east-1.amazonaws.com/newHeader.mov"
+          src="https://magz.s3.us-east-1.amazonaws.com/assets/magz_VIDEO_optimized.webm"
           autoPlay
           muted
           loop
