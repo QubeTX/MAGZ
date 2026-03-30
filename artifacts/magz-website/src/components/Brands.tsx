@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const brands = [
-  { name: "Buffalo Wild Wings", url: "https://www.buffalowildwings.com/", logo: "https://magzmarketing.com/brandLogos/buffalo-wild-wings-logo.png", fullColorOnHover: true },
+  { name: "Buffalo Wild Wings", url: "https://www.buffalowildwings.com/", logo: "https://magzmarketing.com/brandLogos/buffalo-wild-wings-logo.png", fullColor: true },
   { name: "PGA of America", url: "https://www.pga.com/", logo: "https://magzmarketing.com/brandLogos/pga.png" },
   { name: "Panini", url: "https://www.paniniamerica.net/", logo: "https://magzmarketing.com/brandLogos/panini-group-logo.png", fullColor: true },
   { name: "Scheels", url: "https://www.scheels.com/", logo: "https://magzmarketing.com/brandLogos/ScheelsLogo.svg" },
