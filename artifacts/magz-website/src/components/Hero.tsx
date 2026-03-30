@@ -45,7 +45,7 @@ export function Hero() {
             initial={{ letterSpacing: "0.8em", opacity: 0 }}
             animate={{ letterSpacing: "0.3em", opacity: 1 }}
             transition={{ duration: 1.2, delay: 0.3 }}
-            className="font-mono text-xl md:text-2xl text-accent mb-4 md:mb-[-2vw] relative z-20 glow-accent"
+            className="font-mono text-xl md:text-2xl text-accent mb-0 relative z-20 glow-accent"
           >
             WE ARE
           </motion.p>
@@ -112,17 +112,22 @@ export function Hero() {
       </motion.div>
 
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.6, duration: 0.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
       >
-        <div className="w-6 h-10 border-2 border-foreground/30 flex justify-center pt-2">
-          <motion.div
-            className="w-1.5 h-1.5 bg-accent"
-            animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          />
-        </div>
+        <span className="font-mono text-[10px] tracking-[0.3em] text-foreground/30 uppercase">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          className="flex flex-col items-center"
+        >
+          <div className="w-px h-8 bg-gradient-to-b from-accent to-transparent"></div>
+          <svg width="12" height="8" viewBox="0 0 12 8" className="text-accent mt-1">
+            <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="square" />
+          </svg>
+        </motion.div>
       </motion.div>
     </section>
   );
