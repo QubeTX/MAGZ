@@ -47,12 +47,12 @@ export function Careers() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
-            className="relative overflow-hidden border-4 border-foreground/20"
+            className="relative overflow-hidden border-4 border-foreground/20 max-h-[500px] self-center"
           >
             <img
               src="https://magz.s3.us-east-1.amazonaws.com/assets/Deck+Albert's+Media/ALL+AMERICAN+BOWL-23.webp"
               alt="All American Bowl event"
-              className="w-full h-full object-cover min-h-[400px]"
+              className="w-full h-full object-cover object-top min-h-[300px]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
