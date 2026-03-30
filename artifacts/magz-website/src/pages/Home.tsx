@@ -5,6 +5,7 @@ import { Services } from "@/components/Services";
 import { Stats } from "@/components/Stats";
 import { Brands } from "@/components/Brands";
 import { Gallery } from "@/components/Gallery";
+import { Careers } from "@/components/Careers";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Stats />
       <Brands />
       <Gallery />
+      <Careers />
       <Footer />
     </main>
   );
