@@ -52,6 +52,7 @@ export function Careers() {
             <img
               src="https://magz.s3.us-east-1.amazonaws.com/assets/Deck+Albert's+Media/ALL+AMERICAN+BOWL-23.webp"
               alt="All American Bowl event"
+              loading="lazy"
               className="w-full h-full object-cover min-h-[300px]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>

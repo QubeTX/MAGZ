@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.4.2] - 2026-03-30
+
+### Fixed
+- Scroll lag/freeze when scrolling through the "Join the Team" section caused by accumulated main-thread overhead from competing animation systems
+
+### Changed
+- Gallery: replaced `transition-all` with `transition-[filter,opacity,transform]` on 16 images (browser was tracking ~50 properties per image instead of 3)
+- Gallery: converted `motion.img` to plain `<img>` with CSS-only `group-hover:scale-[1.08]` (eliminates 16 Framer Motion subscriptions)
+- Gallery: converted 48 `motion.div` overlay/label/bar elements to plain `<div>` (only used CSS `group-hover` transitions, not Framer Motion features)
+- Gallery: added `content-visibility: auto` on grid container so browser skips rendering when scrolled off-screen
+- Gallery: added `will-change-transform` on images for GPU compositor layer promotion
+- Marquee: converted infinite Framer Motion `animate={{ x }}` to CSS `@keyframes marquee-scroll` (moves from JS rAF loop to compositor thread)
+- Hero: converted 4 infinite Framer Motion animations (rotate, scale, bounce) to CSS `@keyframes` (eliminates 4 permanent JS rAF loops)
+- Careers: added `loading="lazy"` to hero image
+
 ## [1.4.1] - 2026-03-30
 
 ### Added

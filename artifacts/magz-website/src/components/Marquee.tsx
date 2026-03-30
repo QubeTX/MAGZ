@@ -36,18 +36,13 @@ export function Marquee() {
       viewport={{ once: true }}
       className="w-full bg-gradient-to-r from-accent via-accent to-[#F5A623] border-y-4 border-foreground py-4 md:py-6 overflow-hidden flex items-center relative z-20"
     >
-      <motion.div
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{
-          repeat: Infinity,
-          ease: "linear",
-          duration: 20,
-        }}
-        className="flex whitespace-nowrap"
+      <div
+        className="flex whitespace-nowrap animate-[marquee-scroll_20s_linear_infinite]"
+        style={{ willChange: "transform" }}
       >
         <MarqueeContent />
         <MarqueeContent />
-      </motion.div>
+      </div>
     </motion.div>
   );
 }

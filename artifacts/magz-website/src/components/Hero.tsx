@@ -138,9 +138,9 @@ export function Hero() {
         transition={{ delay: 1.4, duration: 0.8 }}
         className="absolute bottom-12 right-6 md:right-12 hidden md:flex gap-2"
       >
-        <motion.div className="w-4 h-4 bg-accent" animate={{ rotate: [0, 90, 0] }} transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}></motion.div>
-        <motion.div className="w-4 h-4 bg-secondary" animate={{ rotate: [0, -90, 0] }} transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 0.5 }}></motion.div>
-        <motion.div className="w-4 h-4 border-2 border-foreground" animate={{ scale: [1, 1.3, 1] }} transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}></motion.div>
+        <div className="w-4 h-4 bg-accent animate-[hero-rotate_4s_ease-in-out_infinite]" />
+        <div className="w-4 h-4 bg-secondary animate-[hero-rotate-reverse_4s_ease-in-out_0.5s_infinite]" />
+        <div className="w-4 h-4 border-2 border-foreground animate-[hero-pulse_2s_ease-in-out_infinite]" />
       </motion.div>
 
       <motion.div
@@ -150,16 +150,14 @@ export function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
       >
         <span className="font-mono text-[10px] tracking-[0.3em] text-foreground/30 uppercase">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          className="flex flex-col items-center"
+        <div
+          className="flex flex-col items-center animate-[hero-bounce-y_1.5s_ease-in-out_infinite]"
         >
           <div className="w-px h-8 bg-gradient-to-b from-accent to-transparent"></div>
           <svg width="12" height="8" viewBox="0 0 12 8" className="text-accent mt-1">
             <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="square" />
           </svg>
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );
