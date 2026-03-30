@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.4.0] - 2026-03-30
+
+### Added
+- Fully branded 404 page with animated hero ("404" gradient text with glitch effect, "OUT OF BOUNDS" text-outline subtitle), error marquee banner, and 3-card navigation section (Home, Careers, Find Us)
+- Comprehensive `DESIGN.md` design system reference documenting brand identity, colors, typography, spacing, borders, custom CSS utilities, Framer Motion animation patterns, Lenis smooth scroll, Pretext heading measurement, accordion pattern, background layers, component inventory, page compositions, section IDs, external assets, icon usage, responsive breakpoints, routing, and dependencies
+
+### Fixed
+- Pre-existing TypeScript errors in Brands.tsx, Services.tsx, and CareersPage.tsx where Framer Motion `ease` arrays were typed as `number[]` instead of `[number, number, number, number]` tuples
+- Removed unreachable `fullColorOnHover` code branch in Brands.tsx
+
 ## [1.3.1] - 2026-03-30
 
 ### Fixed

@@ -26,7 +26,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, scale: 0.8 },
-  show: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] } }
+  show: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] as [number, number, number, number] } }
 };
 
 export function Brands() {
@@ -73,11 +73,7 @@ export function Brands() {
                   src={brand.logo}
                   alt={brand.name}
                   className={`${brand.logoClass || 'max-w-[80%] max-h-[70%]'} object-contain z-10 relative transition-all duration-300 ${
-                    brand.fullColor
-                      ? ''
-                      : brand.fullColorOnHover
-                        ? 'brightness-0 invert group-hover:brightness-100 group-hover:invert-0'
-                        : 'brightness-0 invert'
+                    brand.fullColor ? '' : 'brightness-0 invert'
                   }`}
                 />
               )}

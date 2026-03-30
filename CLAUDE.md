@@ -24,7 +24,7 @@ Root scripts proxy into the single workspace package via `pnpm --filter @workspa
 
 **Section IDs** used for anchor navigation: `hero`, `about` (Services), `stats`, `brands`, `athletes` (Gallery), `careers`, `footer`. EmpoweringAthletes has no ID (not linked from nav). CareersPage has its own: `careers-hero`, `team`, `expertise`, `faq`, `cta`.
 
-**Accordion pattern:** Reused in Services, CareersPage expertise, and CareersPage FAQ. All follow the same structure: `useState` for `openIndex`, `AnimatePresence` for expand/collapse, and a `setTimeout(() => lenis.scrollTo(el, { offset: -100, duration: 1 }), 100)` after opening.
+**Accordion pattern:** Reused in Services, CareersPage expertise, and CareersPage FAQ. All follow the same structure: `useState` for `openIndex`, `AnimatePresence` for expand/collapse, and a `setTimeout(() => lenis.scrollTo(el, { offset: -100, duration: 1 }), 500)` after opening. The 500ms delay must be >= the Framer Motion expand/collapse animation duration (also 500ms) so Lenis calculates scroll positions after layout settles.
 
 **Text measurement:** @chenglou/pretext for responsive heading layout. Ships raw `.ts` source — requires `optimizeDeps.include` in Vite config and `allowImportingTsExtensions: true` in tsconfig. Used in `PretextHeading.tsx` and `Hero.tsx` subtitle via dynamic `import("@chenglou/pretext")`.
 
