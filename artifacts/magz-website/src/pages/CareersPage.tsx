@@ -77,31 +77,50 @@ export default function CareersPage() {
     <main className="bg-background text-foreground min-h-screen">
       <Navbar />
 
-      <section className="pt-32 pb-20 px-6 md:px-12 max-w-[1600px] mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-        >
-          <h1 className="font-display text-7xl md:text-[10rem] leading-[0.85] mb-8">
-            <span className="text-accent">CA</span>REERS
-          </h1>
-          <motion.div
-            className="h-1 bg-gradient-to-r from-accent to-secondary mb-12"
-            initial={{ width: 0 }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 1, delay: 0.3 }}
+      <section className="relative pt-32 pb-20 px-6 md:px-12 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://magz.s3.us-east-1.amazonaws.com/assets/office.webp"
+            alt="MAGZ Office"
+            className="w-full h-full object-cover opacity-30"
           />
-        </motion.div>
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/50 to-background"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-secondary/10"></div>
+          <div
+            className="absolute inset-0 opacity-[0.08] mix-blend-overlay pointer-events-none"
+            style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
+          ></div>
+        </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="font-sans text-xl md:text-2xl leading-relaxed text-foreground/80 max-w-4xl"
-        >
-          At MAGZ Marketing, we build the engine behind modern sports marketing. From AI-powered analytics and transfer portal strategy to live event activation and massive social distribution, our team works alongside agencies and brands to move faster and create measurable impact in the sports ecosystem.
-        </motion.p>
+        <div className="relative z-10 max-w-[1600px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+          >
+            <h1
+              className="font-display text-7xl md:text-[10rem] leading-[0.85] mb-8 bg-clip-text text-transparent"
+              style={{ backgroundImage: "linear-gradient(to right, #F7941D 0%, #F7941D 20%, #F5F5F5 60%)" }}
+            >
+              CAREERS
+            </h1>
+            <motion.div
+              className="h-1 bg-gradient-to-r from-accent to-secondary mb-12"
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 1, delay: 0.3 }}
+            />
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="font-sans text-xl md:text-2xl leading-relaxed text-foreground/80 max-w-4xl"
+          >
+            At MAGZ Marketing, we build the engine behind modern sports marketing. From AI-powered analytics and transfer portal strategy to live event activation and massive social distribution, our team works alongside agencies and brands to move faster and create measurable impact in the sports ecosystem.
+          </motion.p>
+        </div>
       </section>
 
       <section className="border-y-4 border-accent/30">
