@@ -50,6 +50,17 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 
 ## Packages
 
+### `artifacts/magz-website` (`@workspace/magz-website`)
+
+Brutalist redesign of MAGZ Marketing website. Single-page React + Vite frontend with no backend dependency.
+
+- **Stack**: React, Vite, Tailwind CSS, Framer Motion, react-countup, lucide-react
+- **Design**: Brutalist aesthetic — black (#050505) background, white (#F5F5F5) text, electric yellow (#CCFF00) accent, no rounded corners, thick borders, extreme typography scale
+- **Fonts**: Anton (display headings), Space Mono (monospace labels/numbers), Inter (body text)
+- **Sections**: Hero, scrolling marquee, expandable services (accordion), animated stats counter, brand logos grid, athlete photo gallery, footer with CTA
+- **Preview**: Served at `/` (root path)
+- All images loaded from external URLs (magzmarketing.com, magz.s3.us-east-1.amazonaws.com)
+
 ### `artifacts/api-server` (`@workspace/api-server`)
 
 Express 5 API server. Routes live in `src/routes/` and use `@workspace/api-zod` for request and response validation and `@workspace/db` for persistence.
