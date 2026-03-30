@@ -2,6 +2,8 @@
 
 Brutalist-designed marketing website for MAGZ Marketing, a sports marketing agency based in Dallas, TX.
 
+**Built by [QubeTX](https://qubetx.com)** — a department of ES Development LLC.
+
 ## Tech Stack
 
 - **Framework:** React 19 + TypeScript
@@ -22,7 +24,7 @@ Brutalist-designed marketing website for MAGZ Marketing, a sports marketing agen
 ## Design System
 
 - **Colors:** Black (#0A0A0A), White (#F5F5F5), Orange (#F7941D), Blue (#2D6BC6)
-- **Typography:** Makira (display headings at Black/ExtraBold weight + body text, self-hosted), Space Mono (monospace labels/numbers)
+- **Typography:** Guton (display headings at Black/ExtraBold weight + body text, self-hosted), Space Mono (monospace labels/numbers)
 - **Aesthetic:** Brutalist — no rounded corners, thick borders, extreme typography scale, high contrast
 
 ## Getting Started
@@ -79,8 +81,17 @@ MAGZ/
 
 ## External Assets
 
-Images and video are served from AWS S3 (`magz.s3.us-east-1.amazonaws.com`). Brand partner logos and Makira font files are bundled locally in `public/`.
+Images and video are served from AWS S3 (`magz.s3.us-east-1.amazonaws.com`). Brand partner logos and Guton font files are bundled locally in `public/`.
 
 ## Deployment
 
 Deployed via Vercel. Connect the repo and Vercel auto-detects the Vite build.
+
+## Links
+
+- [MAGZ Marketing](https://magzmarketing.com)
+- [Linktree](https://linktr.ee/magzsportsgroup)
+
+## License
+
+All work is the sole property of MAGZ Sports L.L.C. Any use without permission is strictly prohibited.

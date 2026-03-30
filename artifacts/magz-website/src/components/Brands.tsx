@@ -1,22 +1,22 @@
 import { motion } from "framer-motion";
 
 const brands = [
-  { name: "Buffalo Wild Wings", url: "https://www.buffalowildwings.com/", logo: "/brandLogos/buffalo-wild-wings-logo.png", fullColor: true },
-  { name: "PGA of America", url: "https://www.pga.com/", logo: "/brandLogos/pga.png" },
-  { name: "Panini", url: "https://www.paniniamerica.net/", logo: "/brandLogos/panini-group-logo.png", fullColor: true },
-  { name: "Scheels", url: "https://www.scheels.com/", logo: "/brandLogos/ScheelsLogo.svg" },
-  { name: "Raising Cane's", url: "https://raisingcanes.com/", logo: "/brandLogos/raising-canes-logo.png", fullColor: true },
-  { name: "Bad Birdie", url: "https://badbirdiegolf.com/", logo: "/brandLogos/bad-birdie-logo.png" },
-  { name: "Charlie Hustle", url: "https://www.charliehustle.com/", logo: "/brandLogos/charlie-hustle-logo.png" },
-  { name: "Fore All", url: "https://www.foreall.com/", logo: "/brandLogos/fore-all-logo.png" },
-  { name: "Planet Euphoria", url: "https://planeteuphoria.com/", logo: "/brandLogos/euphoria-sports-logo.png" },
-  { name: "No Rivals", url: "https://shopnorivals.com/", logo: "/brandLogos/no-rivals-black.svg" },
-  { name: "Monarc", url: "https://monarcsport.com/", logo: "/brandLogos/monarc-sport-logo.png" },
-  { name: "Q30 Innovations", url: "https://q30.com/", logo: "/brandLogos/q30.webp" },
-  { name: "Socialpruf", url: "https://socialpruf.com/", logo: "/brandLogos/socialpruf-logo.png" },
+  { name: "Buffalo Wild Wings", url: "https://www.buffalowildwings.com/", logo: "/brandLogos/buffalo-wild-wings-logo.png", fullColor: true, logoClass: "max-w-[65%] max-h-[55%]" },
+  { name: "PGA of America", url: "https://www.pga.com/", logo: "/brandLogos/pga.png", logoClass: "max-w-[42%] max-h-[55%]" },
+  { name: "Panini", url: "https://www.paniniamerica.net/", logo: "/brandLogos/panini-group-logo.png", fullColor: true, logoClass: "max-w-[78%] max-h-[40%]" },
+  { name: "Scheels", url: "https://www.scheels.com/", logo: "/brandLogos/ScheelsLogo.svg", logoClass: "max-w-[82%] max-h-[35%]" },
+  { name: "Raising Cane's", url: "https://raisingcanes.com/", logo: "/brandLogos/raising-canes-logo.png", fullColor: true, logoClass: "max-w-[42%] max-h-[55%]" },
+  { name: "Bad Birdie", url: "https://badbirdiegolf.com/", logo: "/brandLogos/bad-birdie-logo.png", logoClass: "max-w-[48%] max-h-[55%]" },
+  { name: "Charlie Hustle", url: "https://www.charliehustle.com/", logo: "/brandLogos/charlie-hustle-logo.png", logoClass: "max-w-[72%] max-h-[50%]" },
+  { name: "Fore All", url: "https://www.foreall.com/", logo: "/brandLogos/fore-all-logo.png", logoClass: "max-w-[72%] max-h-[50%]" },
+  { name: "Planet Euphoria", url: "https://planeteuphoria.com/", logo: "/brandLogos/euphoria-sports-logo.png", logoClass: "max-w-[55%] max-h-[55%]" },
+  { name: "No Rivals", url: "https://shopnorivals.com/", logo: "/brandLogos/no-rivals-black.svg", logoClass: "w-[80%] max-h-[30%]" },
+  { name: "Monarc", url: "https://monarcsport.com/", logo: "/brandLogos/monarc-sport-logo.png", logoClass: "max-w-[82%] max-h-[35%]" },
+  { name: "Q30 Innovations", url: "https://q30.com/", logo: "/brandLogos/q30.webp", logoClass: "w-[65%] max-h-[35%]" },
+  { name: "Socialpruf", url: "https://socialpruf.com/", logo: "/brandLogos/socialpruf-logo.png", logoClass: "w-[80%] max-h-[35%]" },
   { name: "UpNext", url: "https://upnext.team/", textLogo: "UPNEXT" },
-  { name: "Undrafted", url: "https://www.theundrafted.org/", logo: "/brandLogos/undrafted-logo.png" },
-  { name: "CFB Alerts", url: "https://www.instagram.com/cfbalerts", logo: "/brandLogos/cfb-alerts-logo.png" }
+  { name: "Undrafted", url: "https://www.theundrafted.org/", logo: "/brandLogos/undrafted-logo.png", logoClass: "w-[80%] max-h-[30%]" },
+  { name: "CFB Alerts", url: "https://www.instagram.com/cfbalerts", logo: "/brandLogos/cfb-alerts-logo.png", logoClass: "max-w-[42%] max-h-[55%]" }
 ];
 
 const containerVariants = {
@@ -72,7 +72,7 @@ export function Brands() {
                 <img
                   src={brand.logo}
                   alt={brand.name}
-                  className={`max-w-[80%] max-h-[70%] object-contain z-10 relative transition-all duration-300 ${
+                  className={`${brand.logoClass || 'max-w-[80%] max-h-[70%]'} object-contain z-10 relative transition-all duration-300 ${
                     brand.fullColor
                       ? ''
                       : brand.fullColorOnHover

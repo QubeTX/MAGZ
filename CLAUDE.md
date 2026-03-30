@@ -33,7 +33,7 @@ Root scripts proxy into the single workspace package via `pnpm --filter @workspa
 Tailwind CSS 4 with `@theme inline` in `src/index.css` (no separate tailwind config). Brutalist design system:
 
 - Colors: Black `#0A0A0A`, White `#F5F5F5`, Orange `#F7941D`, Blue `#2D6BC6`
-- Fonts: Makira (display at Black/ExtraBold weight + body, self-hosted from `public/fonts/Makira/`), Space Mono (monospace labels, Google Fonts)
+- Fonts: Guton (display at Black/ExtraBold weight + body, self-hosted from `public/fonts/Guton/`), Space Mono (monospace labels, Google Fonts)
 - All `border-radius: 0 !important` forced globally
 - Custom utilities: `.brutalist-button`, `.brutalist-border`, `.text-outline`, `.gradient-text`, `.glow-accent`
 

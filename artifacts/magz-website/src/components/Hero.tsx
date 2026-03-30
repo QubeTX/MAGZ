@@ -23,7 +23,7 @@ export function Hero() {
 
       const style = getComputedStyle(subtitleRef.current);
       const fontSize = parseFloat(style.fontSize);
-      const fontStr = `bold ${fontSize}px Makira`;
+      const fontStr = `bold ${fontSize}px Guton`;
       const secondLine = "AI, ATHLETE INFLUENCE, AND SOCIAL DISTRIBUTION";
       const prepared = pretext.prepare(secondLine, fontStr);
       const result = pretext.layout(prepared, containerWidth, fontSize * 1.6);
@@ -80,7 +80,7 @@ export function Hero() {
           </motion.p>
           <PretextHeading
             text="MAGZ"
-            font="900 120px Makira"
+            font="900 120px Guton"
             className="font-display text-[22vw] md:text-[20vw] leading-[0.8] text-foreground select-none glow-accent"
           />
         </motion.div>

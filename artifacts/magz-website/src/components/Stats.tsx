@@ -49,7 +49,7 @@ export function Stats() {
               className="flex flex-col items-start lg:items-center relative group"
             >
               <motion.div
-                className="font-display text-7xl md:text-8xl lg:text-[7rem] leading-none tracking-tight flex items-baseline"
+                className="font-display font-extrabold text-7xl md:text-8xl lg:text-[7rem] leading-none tracking-tight flex items-baseline"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >

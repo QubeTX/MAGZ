@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0] - 2026-03-30
+
+### Changed
+- Primary font from Makira to Guton Sans Serif (same 6 weights, self-hosted from `public/fonts/Guton/`)
+- Stats/metrics numbers weight to ExtraBold (800) for better readability
+- Brand logo grid: per-logo sizing for visual consistency across different aspect ratios
+  - Scaled down oversized logos (Buffalo Wild Wings, Charlie Hustle, Fore All)
+  - Scaled up undersized logos (No Rivals, Q30, Undrafted, Socialpruf)
+  - Normalized square logos (PGA, Raising Cane's, CFB Alerts) to consistent dimensions
+
+### Removed
+- Makira font files (replaced by Guton)
+
 ## [1.1.0] - 2026-03-30
 
 ### Added
