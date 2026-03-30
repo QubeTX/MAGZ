@@ -1,9 +1,11 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { PretextHeading } from "./PretextHeading";
 
 export function Hero() {
   const ref = useRef(null);
+  const subtitleRef = useRef<HTMLDivElement>(null);
+  const [shouldSplit, setShouldSplit] = useState(false);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -11,6 +13,33 @@ export function Hero() {
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
+  const measureSubtitle = useCallback(async () => {
+    if (!subtitleRef.current) return;
+    try {
+      const pretext = await import("@chenglou/pretext");
+      const containerWidth = subtitleRef.current.offsetWidth;
+      if (containerWidth <= 0) return;
+
+      const style = getComputedStyle(subtitleRef.current);
+      const fontSize = parseFloat(style.fontSize);
+      const fontStr = `bold ${fontSize}px Inter`;
+      const secondLine = "AI, ATHLETE INFLUENCE, AND SOCIAL DISTRIBUTION";
+      const prepared = pretext.prepare(secondLine, fontStr);
+      const result = pretext.layout(prepared, containerWidth, fontSize * 1.6);
+
+      setShouldSplit(result.height <= fontSize * 1.8);
+    } catch {
+      setShouldSplit(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    measureSubtitle();
+    const observer = new ResizeObserver(() => measureSubtitle());
+    if (subtitleRef.current) observer.observe(subtitleRef.current);
+    return () => observer.disconnect();
+  }, [measureSubtitle]);
 
   return (
     <section id="hero" ref={ref} className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden pt-20">
@@ -57,6 +86,7 @@ export function Hero() {
         </motion.div>
 
         <motion.div
+          ref={subtitleRef}
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -64,7 +94,9 @@ export function Hero() {
         >
           <div className="h-1 w-full bg-gradient-to-r from-accent via-accent to-secondary mb-6"></div>
           <p className="font-sans font-bold text-lg md:text-2xl leading-relaxed uppercase text-foreground/90">
-            Magz Marketing sits at the intersection of{" "}
+            Magz Marketing sits at the intersection of
+            {shouldSplit && <br />}
+            {shouldSplit ? " " : " "}
             <motion.span
               className="text-accent inline-block"
               whileHover={{ scale: 1.1, rotate: -2 }}
