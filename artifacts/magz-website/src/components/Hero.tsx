@@ -15,9 +15,12 @@ export function Hero() {
   return (
     <section ref={ref} className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden pt-20">
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
-        <img
-          src="https://magzmarketing.com/gross_photo_assets/studio_photo_fieldDay.jpg"
-          alt="Athlete background"
+        <video
+          src="https://magz.s3.us-east-1.amazonaws.com/newHeader.mov"
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-full h-full object-cover opacity-40 scale-110 origin-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background"></div>
