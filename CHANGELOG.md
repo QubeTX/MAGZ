@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.1.0] - 2026-03-30
+
+### Added
+- Makira Sans Serif font (6 weights: Regular, Medium, SemiBold, Bold, ExtraBold, Black) — self-hosted from `public/fonts/Makira/`
+- 15 brand partner logos as local assets in `public/brandLogos/` (previously loaded from external domain)
+
+### Changed
+- Display font from Anton (Google Fonts) to Makira (self-hosted)
+- Body font from Inter (Google Fonts) to Makira (self-hosted)
+- Brand logo URLs from `magzmarketing.com` to local `/brandLogos/` paths
+- Hero "MAGZ" heading weight to Black (900) for maximum impact
+- Section headings (h1-h6) and marquee weight to ExtraBold (800)
+- Hero "WE ARE" to "MAGZ" spacing increased slightly for breathing room
+- Favicon from SVG to ICO (sourced from S3)
+- Hero.tsx pretext measurement strings updated to reference Makira font
+
+### Removed
+- Google Fonts dependency for Anton and Inter (Space Mono retained via Google Fonts)
+- Duplicate Inter Google Fonts `<link>` import from `index.html`
+- External dependency on `magzmarketing.com` for brand logo assets
+
 ## [1.0.0] - 2026-03-30
 
 ### Added

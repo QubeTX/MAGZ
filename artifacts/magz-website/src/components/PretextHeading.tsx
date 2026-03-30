@@ -47,7 +47,7 @@ export function PretextHeading({ text, font, className = "", lineHeight = 1 }: P
 
   return (
     <div ref={containerRef} className={className} style={measuredHeight ? { minHeight: measuredHeight } : undefined}>
-      <h1 className="font-display text-[22vw] md:text-[20vw] leading-[0.8] text-inherit">{text}</h1>
+      <h1 className="font-display font-black text-[22vw] md:text-[20vw] leading-[0.8] text-inherit">{text}</h1>
     </div>
   );
 }

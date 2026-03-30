@@ -26,14 +26,14 @@ Root scripts proxy into the single workspace package via `pnpm --filter @workspa
 
 **Animations:** Framer Motion across all components. Common pattern: `motion.div` with `whileInView`, `useScroll`/`useTransform` for parallax, `AnimatePresence` for accordion expand/collapse. Custom easing: `[0.76, 0, 0.24, 1]`.
 
-**External assets:** All images and video load from AWS S3 (`magz.s3.us-east-1.amazonaws.com`) and the live site (`magzmarketing.com`). No local image assets are bundled.
+**External assets:** Images and video load from AWS S3 (`magz.s3.us-east-1.amazonaws.com`). Brand partner logos are bundled locally in `public/brandLogos/`.
 
 ## Styling
 
 Tailwind CSS 4 with `@theme inline` in `src/index.css` (no separate tailwind config). Brutalist design system:
 
 - Colors: Black `#0A0A0A`, White `#F5F5F5`, Orange `#F7941D`, Blue `#2D6BC6`
-- Fonts: Anton (display), Inter (body), Space Mono (monospace labels)
+- Fonts: Makira (display at Black/ExtraBold weight + body, self-hosted from `public/fonts/Makira/`), Space Mono (monospace labels, Google Fonts)
 - All `border-radius: 0 !important` forced globally
 - Custom utilities: `.brutalist-button`, `.brutalist-border`, `.text-outline`, `.gradient-text`, `.glow-accent`
 
@@ -45,7 +45,7 @@ Use `cn()` from `@/lib/utils` for conditional className merging (clsx + tailwind
 
 ## Testing
 
-**Always use Playwright for visual/functional testing** — external images from S3 and magzmarketing.com load correctly in Playwright but may fail in Chrome MCP due to extension/cache interference. Only use Chrome MCP if explicitly requested.
+**Always use Playwright for visual/functional testing** — external images from S3 load correctly in Playwright but may fail in Chrome MCP due to extension/cache interference. Only use Chrome MCP if explicitly requested.
 
 Playwright test pattern (global install, CommonJS):
 ```bash

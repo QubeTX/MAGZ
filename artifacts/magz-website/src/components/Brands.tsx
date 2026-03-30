@@ -1,22 +1,22 @@
 import { motion } from "framer-motion";
 
 const brands = [
-  { name: "Buffalo Wild Wings", url: "https://www.buffalowildwings.com/", logo: "https://magzmarketing.com/brandLogos/buffalo-wild-wings-logo.png", fullColor: true },
-  { name: "PGA of America", url: "https://www.pga.com/", logo: "https://magzmarketing.com/brandLogos/pga.png" },
-  { name: "Panini", url: "https://www.paniniamerica.net/", logo: "https://magzmarketing.com/brandLogos/panini-group-logo.png", fullColor: true },
-  { name: "Scheels", url: "https://www.scheels.com/", logo: "https://magzmarketing.com/brandLogos/ScheelsLogo.svg" },
-  { name: "Raising Cane's", url: "https://raisingcanes.com/", logo: "https://magzmarketing.com/brandLogos/raising-canes-logo.png", fullColor: true },
-  { name: "Bad Birdie", url: "https://badbirdiegolf.com/", logo: "https://magzmarketing.com/brandLogos/bad-birdie-logo.png" },
-  { name: "Charlie Hustle", url: "https://www.charliehustle.com/", logo: "https://magzmarketing.com/brandLogos/charlie-hustle-logo.png" },
-  { name: "Fore All", url: "https://www.foreall.com/", logo: "https://magzmarketing.com/brandLogos/fore-all-logo.png" },
-  { name: "Planet Euphoria", url: "https://planeteuphoria.com/", logo: "https://magzmarketing.com/brandLogos/euphoria-sports-logo.png" },
-  { name: "No Rivals", url: "https://shopnorivals.com/", logo: "https://magzmarketing.com/brandLogos/no-rivals-black.svg" },
-  { name: "Monarc", url: "https://monarcsport.com/", logo: "https://magzmarketing.com/brandLogos/monarc-sport-logo.png" },
-  { name: "Q30 Innovations", url: "https://q30.com/", logo: "https://magzmarketing.com/brandLogos/q30.webp" },
-  { name: "Socialpruf", url: "https://socialpruf.com/", logo: "https://magzmarketing.com/brandLogos/socialpruf-logo.png" },
+  { name: "Buffalo Wild Wings", url: "https://www.buffalowildwings.com/", logo: "/brandLogos/buffalo-wild-wings-logo.png", fullColor: true },
+  { name: "PGA of America", url: "https://www.pga.com/", logo: "/brandLogos/pga.png" },
+  { name: "Panini", url: "https://www.paniniamerica.net/", logo: "/brandLogos/panini-group-logo.png", fullColor: true },
+  { name: "Scheels", url: "https://www.scheels.com/", logo: "/brandLogos/ScheelsLogo.svg" },
+  { name: "Raising Cane's", url: "https://raisingcanes.com/", logo: "/brandLogos/raising-canes-logo.png", fullColor: true },
+  { name: "Bad Birdie", url: "https://badbirdiegolf.com/", logo: "/brandLogos/bad-birdie-logo.png" },
+  { name: "Charlie Hustle", url: "https://www.charliehustle.com/", logo: "/brandLogos/charlie-hustle-logo.png" },
+  { name: "Fore All", url: "https://www.foreall.com/", logo: "/brandLogos/fore-all-logo.png" },
+  { name: "Planet Euphoria", url: "https://planeteuphoria.com/", logo: "/brandLogos/euphoria-sports-logo.png" },
+  { name: "No Rivals", url: "https://shopnorivals.com/", logo: "/brandLogos/no-rivals-black.svg" },
+  { name: "Monarc", url: "https://monarcsport.com/", logo: "/brandLogos/monarc-sport-logo.png" },
+  { name: "Q30 Innovations", url: "https://q30.com/", logo: "/brandLogos/q30.webp" },
+  { name: "Socialpruf", url: "https://socialpruf.com/", logo: "/brandLogos/socialpruf-logo.png" },
   { name: "UpNext", url: "https://upnext.team/", textLogo: "UPNEXT" },
-  { name: "Undrafted", url: "https://www.theundrafted.org/", logo: "https://magzmarketing.com/brandLogos/undrafted-logo.png" },
-  { name: "CFB Alerts", url: "https://www.instagram.com/cfbalerts", logo: "https://magzmarketing.com/brandLogos/cfb-alerts-logo.png" }
+  { name: "Undrafted", url: "https://www.theundrafted.org/", logo: "/brandLogos/undrafted-logo.png" },
+  { name: "CFB Alerts", url: "https://www.instagram.com/cfbalerts", logo: "/brandLogos/cfb-alerts-logo.png" }
 ];
 
 const containerVariants = {

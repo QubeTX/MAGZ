@@ -23,7 +23,7 @@ export function Hero() {
 
       const style = getComputedStyle(subtitleRef.current);
       const fontSize = parseFloat(style.fontSize);
-      const fontStr = `bold ${fontSize}px Inter`;
+      const fontStr = `bold ${fontSize}px Makira`;
       const secondLine = "AI, ATHLETE INFLUENCE, AND SOCIAL DISTRIBUTION";
       const prepared = pretext.prepare(secondLine, fontStr);
       const result = pretext.layout(prepared, containerWidth, fontSize * 1.6);
@@ -74,13 +74,13 @@ export function Hero() {
             initial={{ letterSpacing: "0.8em", opacity: 0 }}
             animate={{ letterSpacing: "0.3em", opacity: 1 }}
             transition={{ duration: 1.2, delay: 0.3 }}
-            className="font-mono text-xl md:text-2xl text-accent mb-2 relative z-20 glow-accent"
+            className="font-mono text-xl md:text-2xl text-accent mb-4 relative z-20 glow-accent"
           >
             WE ARE
           </motion.p>
           <PretextHeading
             text="MAGZ"
-            font="bold 120px Anton"
+            font="900 120px Makira"
             className="font-display text-[22vw] md:text-[20vw] leading-[0.8] text-foreground select-none glow-accent"
           />
         </motion.div>

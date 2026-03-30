@@ -22,7 +22,7 @@ Brutalist-designed marketing website for MAGZ Marketing, a sports marketing agen
 ## Design System
 
 - **Colors:** Black (#0A0A0A), White (#F5F5F5), Orange (#F7941D), Blue (#2D6BC6)
-- **Typography:** Anton (display headings), Space Mono (monospace labels/numbers), Inter (body text)
+- **Typography:** Makira (display headings at Black/ExtraBold weight + body text, self-hosted), Space Mono (monospace labels/numbers)
 - **Aesthetic:** Brutalist — no rounded corners, thick borders, extreme typography scale, high contrast
 
 ## Getting Started
@@ -61,7 +61,7 @@ pnpm run serve
 MAGZ/
 ├── artifacts/
 │   └── magz-website/          # React + Vite frontend
-│       ├── public/            # Static assets (favicon, opengraph)
+│       ├── public/            # Static assets (favicon, opengraph, brand logos, fonts)
 │       ├── src/
 │       │   ├── components/    # UI components (Hero, Navbar, Services, etc.)
 │       │   ├── pages/         # Route pages (Home, CareersPage, not-found)
@@ -79,7 +79,7 @@ MAGZ/
 
 ## External Assets
 
-Images and video are served from AWS S3 (`magz.s3.us-east-1.amazonaws.com`) and the live site (`magzmarketing.com`). No local image assets are bundled.
+Images and video are served from AWS S3 (`magz.s3.us-east-1.amazonaws.com`). Brand partner logos and Makira font files are bundled locally in `public/`.
 
 ## Deployment
 

@@ -1,6 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 @import "lenis/dist/lenis.css";
+
+@font-face {
+  font-family: 'Makira';
+  src: url('/fonts/Makira/Makira-Regular.woff2') format('woff2'),
+       url('/fonts/Makira/Makira-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Makira';
+  src: url('/fonts/Makira/Makira-Medium.woff2') format('woff2'),
+       url('/fonts/Makira/Makira-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Makira';
+  src: url('/fonts/Makira/Makira-SemiBold.woff2') format('woff2'),
+       url('/fonts/Makira/Makira-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Makira';
+  src: url('/fonts/Makira/Makira-Bold.woff2') format('woff2'),
+       url('/fonts/Makira/Makira-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Makira';
+  src: url('/fonts/Makira/Makira-ExtraBold.woff2') format('woff2'),
+       url('/fonts/Makira/Makira-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Makira';
+  src: url('/fonts/Makira/Makira-Black.woff2') format('woff2'),
+       url('/fonts/Makira/Makira-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme inline {
   --color-background: #0A0A0A;
@@ -10,8 +64,8 @@
   --color-secondary: #2D6BC6;
   --color-secondary-hover: #1E5AB0;
 
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Anton', sans-serif;
+  --font-sans: 'Makira', sans-serif;
+  --font-display: 'Makira', sans-serif;
   --font-mono: 'Space Mono', monospace;
 
   --color-border: #2A2A2A;
@@ -37,7 +91,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-wide uppercase;
+    @apply font-display font-extrabold tracking-wide uppercase;
   }
 }
 

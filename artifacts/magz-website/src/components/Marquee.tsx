@@ -11,7 +11,7 @@ function MarqueeContent() {
     <div className="flex items-center shrink-0">
       {words.map((word, i) => (
         <span key={i} className="flex items-center">
-          <span className="font-display text-4xl md:text-7xl text-black uppercase tracking-wide mx-2">
+          <span className="font-display font-extrabold text-4xl md:text-7xl text-black uppercase tracking-wide mx-2">
             {word}
           </span>
           {i < words.length - 1 && (
@@ -21,7 +21,7 @@ function MarqueeContent() {
           )}
         </span>
       ))}
-      <span className="font-display text-4xl md:text-7xl text-secondary/60 uppercase tracking-wide mx-8">
+      <span className="font-display font-extrabold text-4xl md:text-7xl text-secondary/60 uppercase tracking-wide mx-8">
         ///
       </span>
     </div>
