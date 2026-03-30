@@ -2,32 +2,37 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #050505;
+  --color-background: #0A0A0A;
   --color-foreground: #F5F5F5;
-  --color-accent: #CCFF00; /* Electric Yellow */
-  --color-accent-hover: #b3e600;
-  
+  --color-accent: #F7941D;
+  --color-accent-hover: #E5850A;
+  --color-secondary: #2D6BC6;
+  --color-secondary-hover: #1E5AB0;
+
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Anton', sans-serif;
   --font-mono: 'Space Mono', monospace;
 
-  --color-border: #333333;
+  --color-border: #2A2A2A;
 }
 
 :root {
-  --background: #050505;
+  --background: #0A0A0A;
   --foreground: #F5F5F5;
-  --border: #333333;
+  --border: #2A2A2A;
+  --accent-raw: #F7941D;
+  --secondary-raw: #2D6BC6;
 }
 
 @layer base {
   * {
     @apply border-border;
-    border-radius: 0 !important; /* Enforce brutalist sharp edges */
+    border-radius: 0 !important;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased selection:bg-accent selection:text-black;
+    scroll-behavior: smooth;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -39,35 +44,54 @@
   .brutalist-border {
     @apply border-2 border-foreground;
   }
-  
+
   .brutalist-button {
-    @apply font-mono font-bold uppercase tracking-widest px-6 py-3 border-2 border-foreground transition-all duration-150
+    @apply font-mono font-bold uppercase tracking-widest px-6 py-3 border-2 border-accent text-accent transition-all duration-150
            hover:bg-accent hover:text-black hover:border-accent hover:-translate-y-1 hover:translate-x-1
-           active:translate-y-0 active:translate-x-0 shadow-[4px_4px_0px_0px_#F5F5F5] hover:shadow-[0px_0px_0px_0px_#CCFF00];
+           active:translate-y-0 active:translate-x-0 shadow-[4px_4px_0px_0px_#F7941D] hover:shadow-[0px_0px_0px_0px_#F7941D];
   }
 
   .text-outline {
-    -webkit-text-stroke: 1px var(--color-foreground);
+    -webkit-text-stroke: 2px var(--color-foreground);
     color: transparent;
   }
-  
+
   .text-outline-accent {
     -webkit-text-stroke: 2px var(--color-accent);
     color: transparent;
   }
 
-  /* Custom scrollbar for brutalist feel */
+  .text-outline-secondary {
+    -webkit-text-stroke: 2px var(--color-secondary);
+    color: transparent;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-accent {
+    text-shadow: 0 0 30px rgba(247, 148, 29, 0.3), 0 0 60px rgba(247, 148, 29, 0.1);
+  }
+
+  .glow-secondary {
+    text-shadow: 0 0 30px rgba(45, 107, 198, 0.3), 0 0 60px rgba(45, 107, 198, 0.1);
+  }
+
   ::-webkit-scrollbar {
-    width: 12px;
+    width: 8px;
   }
   ::-webkit-scrollbar-track {
     background: var(--background);
-    border-left: 2px solid var(--border);
+    border-left: 1px solid var(--border);
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--color-foreground);
+    background: var(--color-accent);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-accent);
+    background: var(--color-secondary);
   }
 }

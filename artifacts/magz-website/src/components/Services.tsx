@@ -42,79 +42,128 @@ const services = [
   }
 ];
 
+const staggerContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.15 } }
+};
+
+const slideUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] } }
+};
+
 export function Services() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="about" className="py-24 md:py-32 px-6 md:px-12 max-w-[1600px] mx-auto border-x-4 border-transparent md:border-border">
+    <section id="about" className="py-24 md:py-32 px-6 md:px-12 max-w-[1600px] mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
-        <div className="lg:col-span-4">
+        <motion.div
+          className="lg:col-span-4"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
+        >
           <h2 className="font-display text-6xl md:text-8xl leading-none">
             WHAT <br/>
             <span className="text-accent">WE DO</span>
           </h2>
-          <div className="w-24 h-4 bg-foreground mt-8"></div>
-        </div>
-        
-        <div className="lg:col-span-8 flex flex-col gap-6">
+          <motion.div
+            className="h-4 bg-gradient-to-r from-accent to-secondary mt-8"
+            initial={{ width: 0 }}
+            whileInView={{ width: 96 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          />
+        </motion.div>
+
+        <motion.div
+          className="lg:col-span-8 flex flex-col gap-6"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {services.map((service, idx) => {
             const isOpen = openIndex === idx;
-            
+
             return (
-              <div 
+              <motion.div
                 key={service.num}
+                variants={slideUp}
                 className={cn(
-                  "border-4 transition-colors duration-300",
-                  isOpen ? "border-accent bg-accent/5" : "border-foreground bg-transparent hover:border-foreground/50"
+                  "border-4 transition-all duration-300",
+                  isOpen ? "border-accent bg-accent/5 shadow-[0_0_30px_rgba(247,148,29,0.1)]" : "border-foreground/20 bg-transparent hover:border-accent/50"
                 )}
+                whileHover={!isOpen ? { x: 4, borderColor: "rgba(247,148,29,0.5)" } : {}}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
                   className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none"
                 >
                   <div className="flex items-center gap-6 md:gap-12">
-                    <span className={cn(
-                      "font-mono text-2xl md:text-4xl font-bold",
-                      isOpen ? "text-accent" : "text-foreground/50"
-                    )}>
+                    <motion.span
+                      className={cn(
+                        "font-mono text-2xl md:text-4xl font-bold transition-colors",
+                        isOpen ? "text-accent" : "text-secondary/60"
+                      )}
+                      animate={isOpen ? { scale: [1, 1.1, 1] } : {}}
+                      transition={{ duration: 0.3 }}
+                    >
                       {service.num}
-                    </span>
+                    </motion.span>
                     <h3 className="font-display text-3xl md:text-5xl tracking-wide m-0">
                       {service.title}
                     </h3>
                   </div>
-                  <div className={cn(
-                    "p-2 border-2 transition-transform duration-300",
-                    isOpen ? "border-accent text-accent rotate-180" : "border-foreground text-foreground"
-                  )}>
+                  <motion.div
+                    className={cn(
+                      "p-2 border-2 transition-colors",
+                      isOpen ? "border-accent text-accent" : "border-foreground/40 text-foreground/40"
+                    )}
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     {isOpen ? <Minus size={24} /> : <Plus size={24} />}
-                  </div>
+                  </motion.div>
                 </button>
-                
+
                 <AnimatePresence>
                   {isOpen && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                      transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="p-6 md:p-8 pt-0 border-t-2 border-border mt-4">
-                        <p className="font-sans text-lg md:text-xl leading-relaxed text-foreground/90 mb-8 max-w-4xl">
+                      <div className="p-6 md:p-8 pt-0 border-t-2 border-accent/30 mt-4">
+                        <motion.p
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.1, duration: 0.4 }}
+                          className="font-sans text-lg md:text-xl leading-relaxed text-foreground/90 mb-8 max-w-4xl"
+                        >
                           {service.desc}
-                        </p>
+                        </motion.p>
                         <ul className="space-y-4">
                           {service.bullets.map((bullet, i) => {
                             const [title, desc] = bullet.split(": ");
                             return (
-                              <li key={i} className="flex gap-4 items-start font-sans text-base md:text-lg">
+                              <motion.li
+                                key={i}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.2 + i * 0.08, duration: 0.4 }}
+                                className="flex gap-4 items-start font-sans text-base md:text-lg"
+                              >
                                 <span className="text-accent mt-1">■</span>
                                 <div>
-                                  <strong className="text-foreground tracking-wide">{title}:</strong>
+                                  <strong className="text-accent tracking-wide">{title}:</strong>
                                   <span className="text-foreground/70 ml-2">{desc}</span>
                                 </div>
-                              </li>
+                              </motion.li>
                             );
                           })}
                         </ul>
@@ -122,10 +171,10 @@ export function Services() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

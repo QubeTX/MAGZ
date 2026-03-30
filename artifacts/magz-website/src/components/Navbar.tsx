@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -7,19 +8,14 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollTo = (id: string) => {
     setIsMobileMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   const navLinks = [
@@ -29,87 +25,113 @@ export function Navbar() {
   ];
 
   return (
-    <nav
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300 border-b-2",
+        "fixed top-0 w-full z-50 transition-all duration-500 border-b-2",
         isScrolled
-          ? "bg-background/95 backdrop-blur-md border-border py-4"
+          ? "bg-background/95 backdrop-blur-md border-accent/30 py-3"
           : "bg-transparent border-transparent py-6"
       )}
     >
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex justify-between items-center">
-        {/* Logo */}
-        <div 
+        <motion.div
           className="cursor-pointer z-50 flex items-center gap-4"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <img 
-            src="https://magz.s3.us-east-1.amazonaws.com/MAGZ+Logos/Colorful+M.png" 
-            alt="MAGZ Logo" 
+          <img
+            src="https://magz.s3.us-east-1.amazonaws.com/MAGZ+Logos/Colorful+M.png"
+            alt="MAGZ Logo"
             className="h-8 md:h-12 object-contain"
           />
-        </div>
+        </motion.div>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-10">
           <ul className="flex items-center gap-8 font-mono text-sm font-bold tracking-widest uppercase">
-            {navLinks.map((link) => (
-              <li key={link.name}>
+            {navLinks.map((link, i) => (
+              <motion.li
+                key={link.name}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
+              >
                 <button
                   onClick={() => scrollTo(link.id)}
                   className="relative group hover:text-accent transition-colors py-2"
                 >
                   {link.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-[3px] bg-gradient-to-r from-accent to-secondary transition-all duration-300 group-hover:w-full"></span>
                 </button>
-              </li>
+              </motion.li>
             ))}
           </ul>
-          <button 
+          <motion.button
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
             onClick={() => scrollTo('footer')}
             className="brutalist-button text-sm"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
             FIND US
-          </button>
+          </motion.button>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
+        <motion.button
           className="md:hidden z-50 text-foreground"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          whileTap={{ scale: 0.9, rotate: 90 }}
         >
           {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
-        </button>
+        </motion.button>
       </div>
 
-      {/* Mobile Nav Overlay */}
-      <div
-        className={cn(
-          "fixed inset-0 bg-background z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]",
-          isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
-        )}
-      >
-        <ul className="flex flex-col items-center gap-8 font-display text-5xl">
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              <button
-                onClick={() => scrollTo(link.id)}
-                className="hover:text-accent transition-colors hover:italic"
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ clipPath: "circle(0% at calc(100% - 40px) 40px)" }}
+            animate={{ clipPath: "circle(150% at calc(100% - 40px) 40px)" }}
+            exit={{ clipPath: "circle(0% at calc(100% - 40px) 40px)" }}
+            transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+            className="fixed inset-0 bg-background z-40 flex flex-col items-center justify-center gap-8"
+          >
+            <ul className="flex flex-col items-center gap-8 font-display text-5xl">
+              {navLinks.map((link, i) => (
+                <motion.li
+                  key={link.name}
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 + i * 0.1, duration: 0.4 }}
+                >
+                  <button
+                    onClick={() => scrollTo(link.id)}
+                    className="hover:text-accent transition-colors"
+                  >
+                    {link.name}
+                  </button>
+                </motion.li>
+              ))}
+              <motion.li
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4, duration: 0.4 }}
               >
-                {link.name}
-              </button>
-            </li>
-          ))}
-          <li>
-            <button
-              onClick={() => scrollTo('footer')}
-              className="text-accent hover:text-foreground transition-colors"
-            >
-              FIND US
-            </button>
-          </li>
-        </ul>
-      </div>
-    </nav>
+                <button
+                  onClick={() => scrollTo('footer')}
+                  className="text-accent hover:text-secondary transition-colors"
+                >
+                  FIND US
+                </button>
+              </motion.li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 }
