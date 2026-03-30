@@ -16,7 +16,7 @@ function MarqueeContent() {
           </span>
           {i < words.length - 1 && (
             <span className="text-secondary text-3xl md:text-5xl mx-3 font-bold">
-              {i % 3 === 0 ? "●" : i % 3 === 1 ? "◆" : "▲"}
+              ●
             </span>
           )}
         </span>
