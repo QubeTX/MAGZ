@@ -45,13 +45,20 @@ export function Footer() {
 
           <div className="md:col-span-3 lg:col-span-3 flex flex-col gap-4">
             <h3 className="font-mono font-bold tracking-widest text-sm border-b-2 border-background/20 pb-2 mb-2 uppercase">Socials</h3>
-            {['Instagram', 'Twitter', 'LinkedIn', 'TikTok'].map(link => (
+            {[
+              { name: 'Instagram', url: 'https://www.instagram.com/magzmarketing/' },
+              { name: 'Twitter', url: 'https://twitter.com/magzmarketing' },
+              { name: 'LinkedIn', url: 'https://www.linkedin.com/company/magzmarketing/' },
+              { name: 'TikTok', url: 'https://www.tiktok.com/@magzmarketing' },
+            ].map(link => (
               <a 
-                key={link}
-                href="#"
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-left font-display text-2xl uppercase hover:text-accent hover:translate-x-2 transition-all w-fit"
               >
-                {link}
+                {link.name}
               </a>
             ))}
           </div>
