@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.2.1] - 2026-03-30
+
+### Fixed
+- Mobile hamburger menu not covering full viewport when page is scrolled down. The overlay was a child of `<motion.nav>` which applies `backdrop-filter: blur()` when scrolled — this CSS property creates a new containing block that breaks `position: fixed` on descendants. Moved the overlay to a sibling element via React Fragment.
+
 ## [1.2.0] - 2026-03-30
 
 ### Changed

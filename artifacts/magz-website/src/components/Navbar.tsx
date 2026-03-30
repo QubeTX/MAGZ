@@ -74,6 +74,7 @@ export function Navbar() {
   };
 
   return (
+    <>
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -143,47 +144,49 @@ export function Navbar() {
         </motion.button>
       </div>
 
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ clipPath: "circle(0% at calc(100% - 40px) 40px)" }}
-            animate={{ clipPath: "circle(150% at calc(100% - 40px) 40px)" }}
-            exit={{ clipPath: "circle(0% at calc(100% - 40px) 40px)" }}
-            transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 bg-background z-40 flex flex-col items-center justify-center gap-8"
-          >
-            <ul className="flex flex-col items-center gap-8 font-display text-5xl">
-              {navLinks.map((link, i) => (
-                <motion.li
-                  key={link.name}
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + i * 0.1, duration: 0.4 }}
-                >
-                  <button
-                    onClick={() => handleNavClick(link)}
-                    className="hover:text-accent transition-colors"
-                  >
-                    {link.name}
-                  </button>
-                </motion.li>
-              ))}
+    </motion.nav>
+
+    <AnimatePresence>
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ clipPath: "circle(0% at calc(100% - 40px) 40px)" }}
+          animate={{ clipPath: "circle(150% at calc(100% - 40px) 40px)" }}
+          exit={{ clipPath: "circle(0% at calc(100% - 40px) 40px)" }}
+          transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+          className="fixed inset-0 bg-background z-40 flex flex-col items-center justify-center gap-8"
+        >
+          <ul className="flex flex-col items-center gap-8 font-display text-5xl">
+            {navLinks.map((link, i) => (
               <motion.li
+                key={link.name}
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4, duration: 0.4 }}
+                transition={{ delay: 0.1 + i * 0.1, duration: 0.4 }}
               >
                 <button
-                  onClick={() => scrollTo('footer')}
-                  className="text-accent hover:text-secondary transition-colors"
+                  onClick={() => handleNavClick(link)}
+                  className="hover:text-accent transition-colors"
                 >
-                  FIND US
+                  {link.name}
                 </button>
               </motion.li>
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+            ))}
+            <motion.li
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.4 }}
+            >
+              <button
+                onClick={() => scrollTo('footer')}
+                className="text-accent hover:text-secondary transition-colors"
+              >
+                FIND US
+              </button>
+            </motion.li>
+          </ul>
+        </motion.div>
+      )}
+    </AnimatePresence>
+    </>
   );
 }

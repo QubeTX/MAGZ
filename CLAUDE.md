@@ -22,11 +22,19 @@ Root scripts proxy into the single workspace package via `pnpm --filter @workspa
 
 **Smooth scroll:** Lenis initialized in App.tsx, exposed globally as `window.__lenis`. Components use it for programmatic scrolling (Navbar anchor links, accordion scroll-to).
 
-**Text measurement:** @chenglou/pretext for responsive heading layout. Ships raw `.ts` source — requires `optimizeDeps.include` in Vite config and `allowImportingTsExtensions: true` in tsconfig. Used in `PretextHeading.tsx` via dynamic import. Never use ResizeObserver with pretext shrinkwrap (causes oscillation) — use sync `clientWidth` reads + `window.resize` with RAF gate instead.
+**Section IDs** used for anchor navigation: `hero`, `about` (Services), `stats`, `brands`, `athletes` (Gallery), `careers`, `footer`. CareersPage has its own: `careers-hero`, `team`, `expertise`, `faq`, `cta`.
+
+**Accordion pattern:** Reused in Services, CareersPage expertise, and CareersPage FAQ. All follow the same structure: `useState` for `openIndex`, `AnimatePresence` for expand/collapse, and a `setTimeout(() => lenis.scrollTo(el, { offset: -100, duration: 1 }), 100)` after opening.
+
+**Text measurement:** @chenglou/pretext for responsive heading layout. Ships raw `.ts` source — requires `optimizeDeps.include` in Vite config and `allowImportingTsExtensions: true` in tsconfig. Used in `PretextHeading.tsx` and `Hero.tsx` subtitle via dynamic `import("@chenglou/pretext")`.
 
 **Animations:** Framer Motion across all components. Common pattern: `motion.div` with `whileInView`, `useScroll`/`useTransform` for parallax, `AnimatePresence` for accordion expand/collapse. Custom easing: `[0.76, 0, 0.24, 1]`.
 
-**External assets:** Images and video load from AWS S3 (`magz.s3.us-east-1.amazonaws.com`). Brand partner logos are bundled locally in `public/brandLogos/`.
+**Navbar structure:** The Navbar component returns a React Fragment (`<>`) with two siblings: the `<motion.nav>` element and the mobile menu `<AnimatePresence>` overlay. The overlay must NOT be nested inside `<motion.nav>` because the nav's `backdrop-filter: blur()` (applied when scrolled) creates a CSS containing block that breaks `position: fixed` on descendants.
+
+**Page composition:** Home assembles sections in order: Navbar → Hero → Marquee → Services → Stats → Brands → Gallery → Careers → Footer. CareersPage is standalone with its own Navbar and Footer wrapping hero, team cards, expertise accordion, FAQ accordion, and LinkedIn CTA.
+
+**External assets:** Images and video load from AWS S3 (`magz.s3.us-east-1.amazonaws.com`). Brand partner logos are bundled locally in `public/brandLogos/` with per-logo size classes (`logoClass`).
 
 ## Styling
 
@@ -37,7 +45,7 @@ Tailwind CSS 4 with `@theme inline` in `src/index.css` (no separate tailwind con
 - All `border-radius: 0 !important` forced globally
 - Custom utilities: `.brutalist-button`, `.brutalist-border`, `.text-outline`, `.gradient-text`, `.glow-accent`
 
-Use `cn()` from `@/lib/utils` for conditional className merging (clsx + tailwind-merge).
+Use `cn()` from `@/lib/utils` for conditional className merging (clsx + tailwind-merge). shadcn/ui configured (components.json, new-york style) but no UI primitives installed yet — `cn()` is the only piece in use.
 
 ## Import Alias
 
