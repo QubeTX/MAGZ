@@ -87,7 +87,7 @@ export function EmpoweringAthletes() {
               <img
                 src={social.icon}
                 alt={social.name}
-                className="w-8 h-8 md:w-10 md:h-10 invert"
+                className="w-8 h-8 md:w-10 md:h-10"
               />
             </motion.a>
           ))}

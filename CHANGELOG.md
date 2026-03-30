@@ -4,7 +4,7 @@
 
 ### Added
 - "Empowering Athletes" section on home page (between Join the Team and Footer) with company mission copy from original MAGZ site
-- Social media icons in Empowering Athletes section using SVG assets from S3 (`social_icons/`)
+- Social media icons (black, native color) in Empowering Athletes section using SVG assets from S3 (`social_icons/`)
 - Physical address ("5 Cowboys Way Ste 300, Frisco, TX") in Footer
 - Linktree (`linktr.ee/magzsports`) to Footer social links
 - Missing sentence to AI-Powered Growth service description: "Built to support talent and agencies at every stage—from emerging athletes and transfer portal entrants to established professionals."
