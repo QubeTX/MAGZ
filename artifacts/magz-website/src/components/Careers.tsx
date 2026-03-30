@@ -47,40 +47,18 @@ export function Careers() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
-            className="flex flex-col gap-6"
+            className="relative overflow-hidden border-4 border-foreground/20"
           >
-            {[
-              { role: "Growth Strategist", type: "FULL-TIME // DALLAS, TX" },
-              { role: "Content & Social Lead", type: "FULL-TIME // REMOTE" },
-              { role: "Data Analyst", type: "FULL-TIME // DALLAS, TX" },
-              { role: "Partnership Coordinator", type: "FULL-TIME // REMOTE" },
-            ].map((job, i) => (
-              <motion.button
-                key={i}
-                onClick={() => {
-                  setLocation("/careers");
-                  window.scrollTo({ top: 0 });
-                }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
-                className="group flex items-center justify-between border-4 border-foreground/20 p-6 hover:bg-accent hover:border-accent hover:text-black transition-all duration-300 text-left"
-                whileHover={{ x: 8, borderColor: "#F7941D" }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div>
-                  <h3 className="font-display text-2xl md:text-3xl mb-1">{job.role}</h3>
-                  <p className="font-mono text-xs tracking-widest text-foreground/50 group-hover:text-black/50">{job.type}</p>
-                </div>
-                <motion.div
-                  whileHover={{ rotate: 45 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <ArrowUpRight className="w-8 h-8" />
-                </motion.div>
-              </motion.button>
-            ))}
+            <img
+              src="https://magz.s3.us-east-1.amazonaws.com/assets/Deck+Albert's+Media/ALL+AMERICAN+BOWL-23.webp"
+              alt="All American Bowl event"
+              className="w-full h-full object-cover min-h-[400px]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+              <p className="font-mono text-xs tracking-[0.3em] text-accent mb-2 uppercase">Live Event Activation</p>
+              <p className="font-display text-2xl md:text-3xl text-foreground leading-tight">ALL AMERICAN BOWL</p>
+            </div>
           </motion.div>
         </div>
       </div>
