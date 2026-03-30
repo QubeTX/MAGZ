@@ -21,7 +21,7 @@ const images = [
 
 export function Gallery() {
   return (
-    <section className="py-24 md:py-32">
+    <section id="athletes" className="py-24 md:py-32">
       <motion.div
         className="max-w-[1600px] mx-auto px-6 md:px-12 mb-12 flex justify-between items-end border-b-4 border-accent pb-6"
         initial={{ opacity: 0, y: 30 }}

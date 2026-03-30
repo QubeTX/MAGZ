@@ -2,7 +2,14 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 export function Footer() {
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollToTop = () => {
+    const lenis = (window as any).__lenis;
+    if (lenis) {
+      lenis.scrollTo(0);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
     <footer id="footer" className="bg-foreground text-background pt-24 pb-8 px-6 md:px-12 border-t-4 border-accent relative overflow-hidden">

@@ -17,22 +17,41 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const getLenis = () => (window as any).__lenis;
+
   const scrollTo = (id: string) => {
     setIsMobileMenuOpen(false);
+    const lenis = getLenis();
     if (isHome) {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      const el = document.getElementById(id);
+      if (el && lenis) {
+        lenis.scrollTo(el, { offset: -80 });
+      } else {
+        el?.scrollIntoView({ behavior: "smooth" });
+      }
     } else {
       setLocation("/");
       setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-      }, 300);
+        const el = document.getElementById(id);
+        const l = getLenis();
+        if (el && l) {
+          l.scrollTo(el, { offset: -80 });
+        } else {
+          el?.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 400);
     }
   };
 
   const goHome = () => {
     setIsMobileMenuOpen(false);
+    const lenis = getLenis();
     if (isHome) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (lenis) {
+        lenis.scrollTo(0);
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     } else {
       setLocation("/");
     }

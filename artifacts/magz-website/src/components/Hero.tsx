@@ -13,7 +13,7 @@ export function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden pt-20">
+    <section id="hero" ref={ref} className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden pt-20">
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
         <video
           src="https://magz.s3.us-east-1.amazonaws.com/assets/magz_VIDEO_optimized.webm"

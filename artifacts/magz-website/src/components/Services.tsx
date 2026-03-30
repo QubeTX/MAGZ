@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -54,6 +54,21 @@ const slideUp = {
 
 export function Services() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const handleToggle = useCallback((idx: number) => {
+    const isOpen = openIndex === idx;
+    setOpenIndex(isOpen ? null : idx);
+    if (!isOpen) {
+      setTimeout(() => {
+        const el = itemRefs.current[idx];
+        const lenis = (window as any).__lenis;
+        if (el && lenis) {
+          lenis.scrollTo(el, { offset: -100, duration: 1 });
+        }
+      }, 100);
+    }
+  }, [openIndex]);
 
   return (
     <section id="about" className="py-24 md:py-32 px-6 md:px-12 max-w-[1600px] mx-auto">
@@ -91,6 +106,7 @@ export function Services() {
             return (
               <motion.div
                 key={service.num}
+                ref={(el: HTMLDivElement | null) => { itemRefs.current[idx] = el; }}
                 variants={slideUp}
                 className={cn(
                   "border-4 transition-all duration-300",
@@ -99,7 +115,7 @@ export function Services() {
                 whileHover={!isOpen ? { x: 4, borderColor: "rgba(247,148,29,0.5)" } : {}}
               >
                 <button
-                  onClick={() => setOpenIndex(isOpen ? null : idx)}
+                  onClick={() => handleToggle(idx)}
                   className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none"
                 >
                   <div className="flex items-center gap-6 md:gap-12">

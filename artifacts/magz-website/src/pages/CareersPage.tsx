@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -72,12 +72,42 @@ const fadeUp = {
 export default function CareersPage() {
   const [openExpertise, setOpenExpertise] = useState<number | null>(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const expertiseRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const faqRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const handleExpertiseToggle = useCallback((idx: number) => {
+    const isOpen = openExpertise === idx;
+    setOpenExpertise(isOpen ? null : idx);
+    if (!isOpen) {
+      setTimeout(() => {
+        const el = expertiseRefs.current[idx];
+        const lenis = (window as any).__lenis;
+        if (el && lenis) {
+          lenis.scrollTo(el, { offset: -100, duration: 1 });
+        }
+      }, 100);
+    }
+  }, [openExpertise]);
+
+  const handleFaqToggle = useCallback((idx: number) => {
+    const isOpen = openFaq === idx;
+    setOpenFaq(isOpen ? null : idx);
+    if (!isOpen) {
+      setTimeout(() => {
+        const el = faqRefs.current[idx];
+        const lenis = (window as any).__lenis;
+        if (el && lenis) {
+          lenis.scrollTo(el, { offset: -100, duration: 1 });
+        }
+      }, 100);
+    }
+  }, [openFaq]);
 
   return (
     <main className="bg-background text-foreground min-h-screen">
       <Navbar />
 
-      <section className="relative pt-32 pb-20 px-6 md:px-12 overflow-hidden">
+      <section id="careers-hero" className="relative pt-32 pb-20 px-6 md:px-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src="https://magz.s3.us-east-1.amazonaws.com/assets/office.webp"
@@ -123,7 +153,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section className="border-y-4 border-accent/30">
+      <section id="team" className="border-y-4 border-accent/30">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12">
           <motion.div
             className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border"
@@ -169,7 +199,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section className="py-24 md:py-32 relative overflow-hidden">
+      <section id="expertise" className="py-24 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://magz.s3.us-east-1.amazonaws.com/assets/gross_assets/webp/FullSizeRender.webp"
@@ -209,6 +239,7 @@ export default function CareersPage() {
               return (
                 <motion.div
                   key={item.num}
+                  ref={(el: HTMLDivElement | null) => { expertiseRefs.current[idx] = el; }}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -219,7 +250,7 @@ export default function CareersPage() {
                   )}
                 >
                   <button
-                    onClick={() => setOpenExpertise(isOpen ? null : idx)}
+                    onClick={() => handleExpertiseToggle(idx)}
                     className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none"
                   >
                     <div className="flex items-center gap-6 md:gap-12">
@@ -288,7 +319,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section className="py-24 md:py-32 border-t-4 border-secondary/30">
+      <section id="faq" className="py-24 md:py-32 border-t-4 border-secondary/30">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -316,6 +347,7 @@ export default function CareersPage() {
               return (
                 <motion.div
                   key={idx}
+                  ref={(el: HTMLDivElement | null) => { faqRefs.current[idx] = el; }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -326,7 +358,7 @@ export default function CareersPage() {
                   )}
                 >
                   <button
-                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    onClick={() => handleFaqToggle(idx)}
                     className="w-full flex items-center justify-between p-6 text-left focus:outline-none gap-4"
                   >
                     <h3 className="font-display text-xl md:text-2xl tracking-wide">
@@ -371,7 +403,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section className="py-24 md:py-32 border-t-4 border-accent/20">
+      <section id="cta" className="py-24 md:py-32 border-t-4 border-accent/20">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

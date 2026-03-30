@@ -15,7 +15,7 @@ export function Stats() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="border-y-4 border-accent bg-foreground text-background py-24 overflow-hidden relative">
+    <section id="stats" className="border-y-4 border-accent bg-foreground text-background py-24 overflow-hidden relative">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(247,148,29,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(45,107,198,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       <motion.div
         className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-secondary to-accent"

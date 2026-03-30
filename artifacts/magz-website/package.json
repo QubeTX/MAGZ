@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@chenglou/pretext": "^0.0.2",
+    "lenis": "^1.3.21",
     "react-countup": "^6.5.3"
   }
 }
