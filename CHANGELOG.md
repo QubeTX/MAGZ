@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.6.2] - 2026-03-31
+
+### Changed
+- **OG/SEO preview image** — Replaced with MAGZ Marketing neon sign photo (per Zach). This is the image shown in iMessage, WhatsApp, social media, and other link previews when sharing magzmarketing.com.
+- OG image dimensions updated to 1536x1024 to match new image
+
+### Docs
+- Added live site URL (magzmarketing.com) to README and CLAUDE.md
+- Documented Vercel auto-deploy from `main` branch (no manual deployment needed)
+
 ## [1.6.1] - 2026-03-31
 
 ### Fixed

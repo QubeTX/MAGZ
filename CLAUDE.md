@@ -64,4 +64,6 @@ NODE_PATH="C:/Users/hey/AppData/Roaming/npm/node_modules" node test-file.cjs
 
 ## Deployment
 
-Vercel auto-detects the Vite build. The repo is at `github.com/QubeTX/MAGZ`, branch `main`.
+**Live site: [magzmarketing.com](https://magzmarketing.com)**
+
+Vercel is connected to the GitHub repo (`github.com/QubeTX/MAGZ`, branch `main`). Every push to `main` auto-deploys to production — no manual deployment commands needed.

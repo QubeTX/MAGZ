@@ -1,5 +1,7 @@
 # MAGZ Marketing Website
 
+**Live site: [magzmarketing.com](https://magzmarketing.com)**
+
 Brutalist-designed marketing website for **MAGZ Marketing**, a sports marketing agency specializing in athlete brand activation, NIL strategy, transfer portal operations, and media distribution. Based in Frisco, TX.
 
 ## Tech Stack
@@ -70,7 +72,7 @@ Images and video are served from AWS S3 (`magz.s3.us-east-1.amazonaws.com`). Bra
 
 ## Deployment
 
-Deployed via **Vercel** with auto-detection of the Vite build. The `vercel.json` SPA rewrite ensures client-side routing works for all paths.
+Hosted on **Vercel** at [magzmarketing.com](https://magzmarketing.com). The GitHub repo is connected directly — every push to `main` auto-deploys to production. No manual deployment needed. The `vercel.json` SPA rewrite ensures client-side routing works for all paths.
 
 ## Links
 
