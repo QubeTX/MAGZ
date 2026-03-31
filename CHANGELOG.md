@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.1] - 2026-03-31
+
+### Fixed
+- **OG/SEO preview image** — Link previews (iMessage, WhatsApp, social media) showed a random hero screenshot. Replaced with a clean 1200x630 OG image featuring the MAGZ "M" logo centered on the brand dark background.
+
+### Added
+- Complete Open Graph and Twitter Card meta tags in `index.html` (title, description, image, site_name, url)
+- `og-image.png` — 1200x630 MAGZ logo OG image for all pages
+
+### Removed
+- `opengraph.jpg` — old hero screenshot used as placeholder
+
 ## [1.6.0] - 2026-03-30
 
 ### Fixed
