@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 
 const stats = [
   { value: 300, suffix: "+", label: "Athletes", color: "text-accent" },
-  { value: 80, suffix: "+", label: "Brands", color: "text-secondary" },
+  { value: 80, suffix: "+", label: "Brands", color: "text-accent" },
   { value: 45, suffix: "+", label: "Universities", color: "text-accent" },
   { value: 3, suffix: "B+", label: "Social Impressions", color: "text-accent" },
   { value: 15, suffix: "+", label: "Sports Agencies", color: "text-accent" },
