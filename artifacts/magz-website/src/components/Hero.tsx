@@ -14,13 +14,19 @@ export function Hero() {
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
+  const lastSubtitleWidthRef = useRef<number>(0);
+  const subtitleTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+
   const measureSubtitle = useCallback(async () => {
     if (!subtitleRef.current) return;
     try {
-      const pretext = await import("@chenglou/pretext");
       const containerWidth = subtitleRef.current.offsetWidth;
       if (containerWidth <= 0) return;
+      // Skip if width hasn't meaningfully changed
+      if (Math.abs(containerWidth - lastSubtitleWidthRef.current) < 2) return;
+      lastSubtitleWidthRef.current = containerWidth;
 
+      const pretext = await import("@chenglou/pretext");
       const style = getComputedStyle(subtitleRef.current);
       const fontSize = parseFloat(style.fontSize);
       const fontStr = `bold ${fontSize}px Guton`;
@@ -35,10 +41,17 @@ export function Hero() {
   }, []);
 
   useEffect(() => {
-    measureSubtitle();
-    const observer = new ResizeObserver(() => measureSubtitle());
+    const initTimer = setTimeout(measureSubtitle, 50);
+    const observer = new ResizeObserver(() => {
+      clearTimeout(subtitleTimerRef.current);
+      subtitleTimerRef.current = setTimeout(measureSubtitle, 100);
+    });
     if (subtitleRef.current) observer.observe(subtitleRef.current);
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(initTimer);
+      clearTimeout(subtitleTimerRef.current);
+      observer.disconnect();
+    };
   }, [measureSubtitle]);
 
   return (
