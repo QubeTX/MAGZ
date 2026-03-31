@@ -1,60 +1,46 @@
 # MAGZ Marketing Website
 
-Brutalist-designed marketing website for MAGZ Marketing, a sports marketing agency based in Dallas, TX.
-
-**Built by [QubeTX](https://qubetx.com)** — a department of ES Development LLC.
+Brutalist-designed marketing website for **MAGZ Marketing**, a sports marketing agency specializing in athlete brand activation, NIL strategy, transfer portal operations, and media distribution. Based in Frisco, TX.
 
 ## Tech Stack
 
-- **Framework:** React 19 + TypeScript
-- **Build:** Vite 7
-- **Styling:** Tailwind CSS 4
-- **Animations:** Framer Motion
-- **Smooth Scroll:** Lenis
-- **Text Measurement:** @chenglou/pretext
-- **Routing:** Wouter (lightweight client-side router)
-- **Counter Animations:** react-countup
-- **Package Manager:** pnpm (workspace monorepo)
+| Category | Technology |
+|----------|-----------|
+| Framework | React 19 + TypeScript |
+| Build | Vite 7 |
+| Styling | Tailwind CSS 4 |
+| Animations | Framer Motion |
+| Smooth Scroll | Lenis |
+| Text Measurement | @chenglou/pretext |
+| Routing | Wouter |
+| Counter Animations | react-countup |
+| Package Manager | pnpm (workspace monorepo) |
+| Deployment | Vercel |
 
 ## Pages
 
-- `/` — Home page: hero video, scrolling marquee, services accordion, animated stats, brand partner grid, athlete photo gallery, careers teaser, footer CTA
-- `/careers` — Careers page: intro, team info columns, partnership expertise accordion, FAQs, LinkedIn CTA
+| Route | Description |
+|-------|-------------|
+| `/` | Home — hero video, scrolling marquee, services accordion, animated stats, brand partner grid, athlete photo gallery, careers teaser, footer CTA |
+| `/careers` | Careers — team overview, partnership expertise accordion, FAQs, LinkedIn CTA |
+| `*` | Custom 404 page |
 
 ## Design System
 
-- **Colors:** Black (#0A0A0A), White (#F5F5F5), Orange (#F7941D), Blue (#2D6BC6)
-- **Typography:** Guton (display headings at Black/ExtraBold weight + body text, self-hosted), Space Mono (monospace labels/numbers)
-- **Aesthetic:** Brutalist — no rounded corners, thick borders, extreme typography scale, high contrast
+- **Colors:** Black `#0A0A0A` / White `#F5F5F5` / Orange `#F7941D` / Blue `#2D6BC6`
+- **Typography:** Guton Sans Serif (display + body, self-hosted) / Space Mono (monospace labels)
+- **Aesthetic:** Brutalist — zero border-radius, thick borders, extreme type scale, high contrast
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 20+
-- pnpm (`npm install -g pnpm`)
-
-### Install & Run
+**Prerequisites:** Node.js 20+ and pnpm (`npm install -g pnpm`)
 
 ```bash
-pnpm install
-pnpm run dev
-```
-
-The dev server starts at `http://localhost:5173`.
-
-### Build for Production
-
-```bash
-pnpm run build
-```
-
-Output goes to `artifacts/magz-website/dist/`.
-
-### Preview Production Build
-
-```bash
-pnpm run serve
+pnpm install       # Install dependencies
+pnpm run dev       # Dev server → http://localhost:5173
+pnpm run build     # Production build → artifacts/magz-website/dist/
+pnpm run serve     # Preview production build
+pnpm run typecheck # TypeScript checking
 ```
 
 ## Project Structure
@@ -62,21 +48,20 @@ pnpm run serve
 ```
 MAGZ/
 ├── artifacts/
-│   └── magz-website/          # React + Vite frontend
-│       ├── public/            # Static assets (favicon, opengraph, brand logos, fonts)
+│   └── magz-website/
+│       ├── public/            # Static assets (favicon, brand logos, fonts)
 │       ├── src/
-│       │   ├── components/    # UI components (Hero, Navbar, Services, etc.)
+│       │   ├── components/    # UI components (Hero, Navbar, Services, Stats, Brands, Gallery, etc.)
 │       │   ├── pages/         # Route pages (Home, CareersPage, not-found)
-│       │   ├── lib/           # Utilities
-│       │   ├── App.tsx        # Router setup + Lenis smooth scroll
+│       │   ├── lib/           # Utilities (cn)
+│       │   ├── App.tsx        # Router + Lenis smooth scroll + ScrollToTop
 │       │   ├── main.tsx       # Entry point
-│       │   └── index.css      # Global styles + Tailwind
+│       │   └── index.css      # Tailwind theme + global styles
 │       ├── vite.config.ts
 │       └── package.json
-├── package.json               # Root workspace
-├── pnpm-workspace.yaml        # pnpm workspace config + dependency catalog
-├── tsconfig.base.json         # Shared TypeScript config
-└── tsconfig.json              # Root project references
+├── vercel.json                # SPA rewrite rules
+├── pnpm-workspace.yaml        # Workspace config + dependency catalog
+└── CHANGELOG.md
 ```
 
 ## External Assets
@@ -85,13 +70,26 @@ Images and video are served from AWS S3 (`magz.s3.us-east-1.amazonaws.com`). Bra
 
 ## Deployment
 
-Deployed via Vercel. Connect the repo and Vercel auto-detects the Vite build.
+Deployed via **Vercel** with auto-detection of the Vite build. The `vercel.json` SPA rewrite ensures client-side routing works for all paths.
 
 ## Links
 
 - [MAGZ Marketing](https://magzmarketing.com)
-- [Linktree](https://linktr.ee/magzsportsgroup)
+- [Linktree](https://linktr.ee/magzsports)
+- [Instagram](https://www.instagram.com/magzmarketing/)
+- [LinkedIn](https://www.linkedin.com/company/magzsports/)
+- [X](https://x.com/magzmarketing)
 
 ## License
 
 All work is the sole property of MAGZ Sports L.L.C. Any use without permission is strictly prohibited.
+
+---
+
+<p align="center">
+  <a href="https://qubetx.com">
+    <img src="https://shaughv.s3.us-east-1.amazonaws.com/brandmark/QUBETX/QubeTX-Logo.svg" alt="Built by QubeTX" width="64" />
+  </a>
+  <br />
+  <sub>Built by <a href="https://qubetx.com"><strong>QubeTX</strong></a> — a department of ES Development LLC</sub>
+</p>
