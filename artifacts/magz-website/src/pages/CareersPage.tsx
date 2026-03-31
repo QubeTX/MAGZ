@@ -128,10 +128,7 @@ export default function CareersPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
           >
-            <h1
-              className="font-display text-7xl md:text-[10rem] leading-[0.85] mb-8 bg-clip-text text-transparent"
-              style={{ backgroundImage: "linear-gradient(to right, #F7941D 0%, #F7941D 20%, #F5F5F5 60%)" }}
-            >
+            <h1 className="font-display text-7xl md:text-[10rem] leading-[0.85] mb-8 text-outline-accent">
               CAREERS
             </h1>
             <motion.div
@@ -219,7 +216,7 @@ export default function CareersPage() {
           >
             <h2 className="font-display text-5xl md:text-7xl leading-none mb-4">
               PARTNERSHIP <br />
-              <span className="text-secondary">EXPERTISE</span>
+              <span className="text-outline-secondary">EXPERTISE</span>
             </h2>
             <p className="font-sans text-lg md:text-xl text-foreground/70 max-w-3xl mt-6">
               At MAGZ Marketing, we don't follow the sports marketing playbook — we're rewriting it. Explore the key areas our team excels:
@@ -330,7 +327,7 @@ export default function CareersPage() {
           >
             <h2 className="font-display text-5xl md:text-7xl leading-none">
               FREQUENTLY ASKED <br />
-              <span className="text-accent">QUESTIONS</span>
+              <span className="text-outline-accent">QUESTIONS</span>
             </h2>
             <motion.div
               className="h-1 bg-gradient-to-r from-accent to-secondary mt-8"
@@ -412,7 +409,7 @@ export default function CareersPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-display text-5xl md:text-7xl leading-none mb-6">
-              READY TO MAKE AN <span className="text-accent">IMPACT?</span>
+              READY TO MAKE AN <span className="text-outline-accent">IMPACT?</span>
             </h2>
             <p className="font-sans text-xl md:text-2xl mb-4 max-w-2xl mx-auto text-foreground/60">
               Connect with us to explore current opportunities.

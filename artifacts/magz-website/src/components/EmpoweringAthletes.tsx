@@ -25,7 +25,7 @@ const socials = [
 
 export function EmpoweringAthletes() {
   return (
-    <section className="bg-foreground text-background py-24 md:py-32 border-t-4 border-accent relative overflow-hidden">
+    <section className="bg-background text-foreground py-24 md:py-32 border-t-4 border-accent relative overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(247,148,29,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(45,107,198,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
@@ -42,7 +42,7 @@ export function EmpoweringAthletes() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16">
           <motion.p
-            className="font-sans text-lg md:text-xl leading-relaxed text-background/80"
+            className="font-sans text-lg md:text-xl leading-relaxed text-foreground/80"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -52,7 +52,7 @@ export function EmpoweringAthletes() {
           </motion.p>
 
           <motion.p
-            className="font-sans text-lg md:text-xl leading-relaxed text-background/80"
+            className="font-sans text-lg md:text-xl leading-relaxed text-foreground/80"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

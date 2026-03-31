@@ -31,7 +31,7 @@ export function Gallery() {
       >
         <h2 className="font-display text-5xl md:text-7xl leading-none">
           HIGHLIGHTING <br/>
-          <span className="text-secondary">ATHLETES</span>
+          <span className="text-outline-accent">ATHLETES</span>
         </h2>
       </motion.div>
 

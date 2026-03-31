@@ -16,7 +16,7 @@ const brands = [
   { name: "Socialpruf", url: "https://socialpruf.com/", logo: "/brandLogos/socialpruf-logo.png", logoClass: "w-[80%] max-h-[35%]" },
   { name: "UpNext", url: "https://upnext.team/", textLogo: "UPNEXT" },
   { name: "Undrafted", url: "https://www.theundrafted.org/", logo: "/brandLogos/undrafted-logo.png", logoClass: "w-[80%] max-h-[30%]" },
-  { name: "CFB Alerts", url: "https://www.instagram.com/cfbalerts", logo: "/brandLogos/cfb-alerts-logo.png", logoClass: "max-w-[42%] max-h-[55%]" }
+  { name: "CFB Alerts", url: "https://collegefootballalerts.com", logo: "/brandLogos/cfb-alerts-logo.png", logoClass: "max-w-[42%] max-h-[55%]" }
 ];
 
 const containerVariants = {

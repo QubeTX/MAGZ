@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.5.0] - 2026-03-30
+
+### Added
+- New brutalist loading screen with Framer Motion animations (logo reveal, geometric corner brackets, accent line sweeps, staggered text, progress bar)
+- `ZACH-FEEDBACK-REPORT.md` — comprehensive 1:1 mapping of all 24 feedback items from Zach to implementation
+
+### Changed
+- **Navbar**: Replaced Colorful M icon with full MAGZ Marketing horizontal wordmark logo (both pages)
+- **Marquee**: Text color changed from black to white; blue dot separators now only at start/end of phrase
+- **Stats**: Background inverted to dark (black bg, white text); "3B+ Social Impressions" color changed from blue to orange; counter duration increased (4-5s) and trigger moved to numbers grid with 40% visibility threshold so counters start when users can actually see them
+- **Gallery**: "ATHLETES" heading changed from solid blue fill to outlined orange stroke (`text-outline-accent`)
+- **Careers (home)**: "TEAM" heading changed to outlined orange stroke; removed "All American Bowl" event activation image entirely; section converted to single-column layout
+- **Empowering Athletes**: Background inverted to dark (black bg, white text)
+- **Footer**: Background inverted to dark (black bg, white text); "GROW?" changed to outlined orange stroke; Contact Us button changed to orange background; Back to Top hover updated to orange
+- **CareersPage**: "CAREERS" heading changed from gradient fill to outlined orange stroke; "EXPERTISE" changed to outlined blue stroke; "QUESTIONS" and "IMPACT?" changed to outlined orange stroke
+
+### Removed
+- "All American Bowl" event activation image and overlay from Join the Team section
+
+### Fixed
+- Stats counter animation triggering too early (before numbers visible on screen)
+- College Football Alerts brand link updated from Instagram to collegefootballalerts.com
+
 ## [1.4.2] - 2026-03-30
 
 ### Fixed

@@ -1,9 +1,10 @@
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
-import { useEffect } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Lenis from "lenis";
 import Home from "@/pages/Home";
 import CareersPage from "@/pages/CareersPage";
 import NotFound from "@/pages/not-found";
+import { LoadingScreen } from "@/components/LoadingScreen";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -27,6 +28,9 @@ function Router() {
 }
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const handleLoadingComplete = useCallback(() => setIsLoading(false), []);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -49,9 +53,12 @@ function App() {
   }, []);
 
   return (
-    <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-      <Router />
-    </WouterRouter>
+    <>
+      {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
+      <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+        <Router />
+      </WouterRouter>
+    </>
   );
 }
 

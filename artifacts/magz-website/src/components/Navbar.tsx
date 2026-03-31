@@ -94,9 +94,9 @@ export function Navbar() {
           whileTap={{ scale: 0.95 }}
         >
           <img
-            src="https://magz.s3.us-east-1.amazonaws.com/MAGZ+Logos/Colorful+M.png"
-            alt="MAGZ Logo"
-            className="h-8 md:h-12 object-contain"
+            src="https://magz.s3.us-east-1.amazonaws.com/assets/magz_marketing.png"
+            alt="MAGZ Marketing"
+            className="h-6 md:h-10 object-contain"
           />
         </motion.div>
 
