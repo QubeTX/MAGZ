@@ -36,6 +36,8 @@ function App() {
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
+      // Let native momentum scrolling handle touch — Lenis only smooths mouse wheel
+      touchMultiplier: 0,
     });
 
     function raf(time: number) {

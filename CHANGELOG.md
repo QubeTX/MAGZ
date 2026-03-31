@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.1] - 2026-03-30
+
+### Fixed
+- Stats "3B+" display: "B" now renders at full number size in white, "+" stays orange at smaller size (per Zach's follow-up feedback)
+- Mobile scroll choppiness: set Lenis `touchMultiplier: 0` so touch scrolling uses native browser momentum instead of Lenis interpolation
+
 ## [1.5.0] - 2026-03-30
 
 ### Added

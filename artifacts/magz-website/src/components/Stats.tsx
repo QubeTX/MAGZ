@@ -83,7 +83,14 @@ export function Stats() {
                 ) : (
                   "0"
                 )}
-                <span className={`text-4xl lg:text-6xl ml-1 ${stat.color} opacity-80`}>{stat.suffix}</span>
+                {stat.suffix === "B+" ? (
+                  <>
+                    <span className="text-foreground">B</span>
+                    <span className="text-accent text-4xl lg:text-6xl opacity-80">+</span>
+                  </>
+                ) : (
+                  <span className={`text-4xl lg:text-6xl ml-1 ${stat.color} opacity-80`}>{stat.suffix}</span>
+                )}
               </motion.div>
               <div className="font-mono font-bold text-sm md:text-base tracking-widest uppercase mt-4 border-t-2 border-foreground/20 group-hover:border-foreground pt-2 w-full lg:text-center transition-colors">
                 {stat.label}
