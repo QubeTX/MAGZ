@@ -1,5 +1,5 @@
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useLayoutEffect, useState, useCallback } from "react";
 import Lenis from "lenis";
 import Home from "@/pages/Home";
 import CareersPage from "@/pages/CareersPage";
@@ -8,7 +8,7 @@ import { LoadingScreen } from "@/components/LoadingScreen";
 
 function ScrollToTop() {
   const [location] = useLocation();
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
   return null;

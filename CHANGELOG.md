@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.6.0] - 2026-03-30
+
+### Fixed
+- **Footer navigation completely broken** — Footer menu links (About, Brands, Careers) used naive `document.getElementById().scrollIntoView()` which only worked on the Home page. Clicking "Careers" in the Footer scrolled to the "Join the Team" teaser instead of navigating to `/careers`. Clicking any link from the CareersPage did nothing (IDs don't exist there). Footer is now fully router-aware with cross-page navigation matching the Navbar's behavior.
+- **ScrollToTop flash on page transitions** — `ScrollToTop` used `useEffect` (fires after paint) causing a brief frame of wrong scroll position when navigating between pages. Changed to `useLayoutEffect` which fires before paint, eliminating the flash.
+- **Cross-page anchor scroll unreliable** — Navbar used a hardcoded 400ms `setTimeout` for scrolling to anchors after cross-page navigation. On slow devices, the target element might not exist yet, silently failing. Replaced with a polling approach (50ms intervals, up to 30 attempts) that waits for the element to appear in the DOM.
+- **Layout-shift scroll correction** — Cross-page anchor scrolls to sections far down the page (e.g., Brands) could land short because images above the target load after the initial scroll calculation. Added a 1.5s correction scroll for cross-page navigation only.
+
+### Changed
+- **Buffalo Wild Wings logo** — Replaced old PNG with custom SVGs: white logo shown by default, color (yellow) logo cross-fades in on hover
+- **Q30 Innovations logo** — Replaced low-resolution `.webp` with crisp custom SVG
+
+### Added
+- `public/brandLogos/BWW-WHITE.svg` — Buffalo Wild Wings white logo
+- `public/brandLogos/BWW-COLOR.svg` — Buffalo Wild Wings color logo (hover state)
+- `public/brandLogos/q30.svg` — Q30 Innovations vector logo (replaces q30.webp)
+- `hoverLogo` support in Brands component for dual-state logo rendering with CSS cross-fade
+
 ## [1.5.1] - 2026-03-30
 
 ### Fixed

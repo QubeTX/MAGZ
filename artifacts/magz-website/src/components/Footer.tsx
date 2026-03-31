@@ -1,9 +1,58 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { useLocation } from "wouter";
+
+const menuLinks = [
+  { name: "About", id: "about" },
+  { name: "Brands", id: "brands" },
+  { name: "Careers", href: "/careers" },
+];
 
 export function Footer() {
+  const [location, setLocation] = useLocation();
+  const isHome = location === "/" || location === "";
+  const isCareers = location === "/careers";
+
+  const getLenis = () => (window as any).__lenis;
+
+  const pollScrollTo = (id: string, offset = -80, correct = false, attempt = 0) => {
+    const el = document.getElementById(id);
+    const l = getLenis();
+    if (el && l) {
+      l.scrollTo(el, { offset });
+      // On cross-page nav, correct for layout shifts after images load
+      if (correct) setTimeout(() => l.scrollTo(el, { offset }), 1500);
+    } else if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else if (attempt < 30) {
+      setTimeout(() => pollScrollTo(id, offset, correct, attempt + 1), 50);
+    }
+  };
+
+  const handleMenuClick = (link: { name: string; id?: string; href?: string }) => {
+    if (link.href) {
+      if (location === link.href) {
+        // Already on the page — scroll to top
+        const lenis = getLenis();
+        if (lenis) lenis.scrollTo(0);
+        else window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        setLocation(link.href);
+        window.scrollTo({ top: 0 });
+      }
+    } else if (link.id) {
+      if (isHome) {
+        pollScrollTo(link.id);
+      } else {
+        setLocation("/");
+        // Delay polling start to let React re-render + ScrollToTop settle
+        setTimeout(() => pollScrollTo(link.id!, -80, true), 150);
+      }
+    }
+  };
+
   const scrollToTop = () => {
-    const lenis = (window as any).__lenis;
+    const lenis = getLenis();
     if (lenis) {
       lenis.scrollTo(0);
     } else {
@@ -59,10 +108,10 @@ export function Footer() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="font-mono font-bold tracking-widest text-sm border-b-2 border-foreground/20 pb-2 mb-2 uppercase">Menu</h3>
-            {['About', 'Brands', 'Careers'].map((link, i) => (
+            {menuLinks.map((link, i) => (
               <motion.button
-                key={link}
-                onClick={() => document.getElementById(link.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })}
+                key={link.name}
+                onClick={() => handleMenuClick(link)}
                 className="text-left font-display text-2xl uppercase w-fit transition-colors"
                 whileHover={{ x: 8, color: "#F7941D" }}
                 initial={{ opacity: 0, x: -10 }}
@@ -70,7 +119,7 @@ export function Footer() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + i * 0.05 }}
               >
-                {link}
+                {link.name}
               </motion.button>
             ))}
           </motion.div>

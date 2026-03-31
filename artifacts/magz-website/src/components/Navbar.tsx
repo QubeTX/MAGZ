@@ -19,11 +19,25 @@ export function Navbar() {
 
   const getLenis = () => (window as any).__lenis;
 
+  const pollScrollTo = (id: string, offset = -80, correct = false, attempt = 0) => {
+    const el = document.getElementById(id);
+    const l = getLenis();
+    if (el && l) {
+      l.scrollTo(el, { offset });
+      // On cross-page nav, correct for layout shifts after images load
+      if (correct) setTimeout(() => l.scrollTo(el, { offset }), 1500);
+    } else if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else if (attempt < 30) {
+      setTimeout(() => pollScrollTo(id, offset, correct, attempt + 1), 50);
+    }
+  };
+
   const scrollTo = (id: string) => {
     setIsMobileMenuOpen(false);
-    const lenis = getLenis();
     if (isHome) {
       const el = document.getElementById(id);
+      const lenis = getLenis();
       if (el && lenis) {
         lenis.scrollTo(el, { offset: -80 });
       } else {
@@ -31,15 +45,8 @@ export function Navbar() {
       }
     } else {
       setLocation("/");
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        const l = getLenis();
-        if (el && l) {
-          l.scrollTo(el, { offset: -80 });
-        } else {
-          el?.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 400);
+      // Delay polling start to let React re-render + ScrollToTop settle
+      setTimeout(() => pollScrollTo(id, -80, true), 150);
     }
   };
 
